@@ -2,3 +2,4 @@ cpp/a.out
 cpp/temp.cpp
 python/temp.cpp
 python/*.pyc
+*.sh
