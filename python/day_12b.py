@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_12_data.txt")
+    f = open("../input/day_12_input")
     wp_pos = [10, 1]
     ferry_pos = [0, 0]
     for line in f:

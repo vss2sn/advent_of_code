@@ -14,7 +14,7 @@ def NArrangements(index, jolts, n_arr):
     return count
 
 def main():
-    f = open("../cpp/day_10_data.txt")
+    f = open("../input/day_10_input")
     jolts = list()
     for line in f:
         line = line.strip().replace('\n', '').replace('\r', '')

@@ -4,7 +4,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("day_3_data.txt");
+  file.open("../input/day_3_input");
   std::string row;
   std::vector<std::string> map;
   std::vector<std::string> slopes =

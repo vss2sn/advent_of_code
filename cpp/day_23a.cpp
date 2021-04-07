@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 int main () {
-  std::fstream file{"day_23_data.txt"};
+  std::fstream file{"../input/day_23_input"};
   std::string input;
   std::vector<int> order;
   std::getline(file, input);

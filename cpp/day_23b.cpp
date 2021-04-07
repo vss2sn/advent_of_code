@@ -8,7 +8,7 @@
 constexpr int n_cups = 1000000;
 constexpr int n_rounds = 10000000;
 int main () {
-  std::fstream file{"day_23_data.txt"};
+  std::fstream file{"../input/day_23_input"};
   std::string input;
   std::vector<int> order(n_cups + 1);
   std::vector<int> input_v;

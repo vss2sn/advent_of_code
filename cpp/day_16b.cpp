@@ -19,7 +19,7 @@ struct Rule {
 };
 
 int main() {
-  std::ifstream file{"day_16_data.txt"};
+  std::ifstream file{"../input/day_16_input"};
   std::string line;
 
   // tore rules

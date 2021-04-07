@@ -14,7 +14,7 @@ const std::map<int, std::string> update_rules {
 };
 
 int main() {
-  std::fstream file{"day_19_data.txt"};
+  std::fstream file{"../input/day_19_input"};
   std::string s;
   std::map<int, std::string> known_rules;
   std::map<int, std::vector<std::vector<int>>> subsections_of_rules;

@@ -28,7 +28,7 @@ def DoesMsgFollowRule(message, source):
 
 
 def main():
-    file = open("../cpp/day_19_data.txt")
+    file = open("../input/day_19_input")
     messages = list()
     for line in file:
         line = line.strip('\n')

@@ -5,7 +5,7 @@
 int main() {
   constexpr int total = 2020;
   std::ifstream file;
-  file.open("day_1_data.txt");
+  file.open("../input/day_1_input");
   std::unordered_set<int> entries;
   int num = 0;
   while(file >> num) {

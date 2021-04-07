@@ -5,7 +5,7 @@
 #include <vector>
 
 int main() {
-  std::ifstream file{"day_10_data.txt"};
+  std::ifstream file{"../input/day_10_input"};
   std::vector<int> adapter_joltages;
   int adapter_joltage;
   while(file >> adapter_joltage) {

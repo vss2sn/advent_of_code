@@ -44,7 +44,7 @@ std::vector<uint64_t> GenerateAddresses(const std::string& mask, std::bitset<36>
 }
 
 int main() {
-  std::fstream file{"day_14_data.txt"};
+  std::fstream file{"../input/day_14_input"};
   std::string line;
   std::string mask;
   std::unordered_map<uint64_t, uint64_t> memory;

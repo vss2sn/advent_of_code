@@ -56,7 +56,7 @@ def step(cells, n_dims, bounds):
 def main():
     n_steps = 6
     n_dims = 3
-    file_name = "../cpp/day_17_data.txt"
+    file_name = "../input/day_17_input"
 
     cells = parseInputAndCreateCells(file_name, n_dims)
     for _ in range(n_steps):

@@ -6,7 +6,7 @@
 int main() {
   constexpr int total = 2020;
   std::ifstream file;
-  file.open("day_1_data.txt");
+  file.open("../input/day_1_input");
   int num = 0;
 
   std::vector<int> entries_v{std::istream_iterator<int>{file}, {}};  // Ref: C++'s most vexing parse :D

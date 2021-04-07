@@ -67,7 +67,7 @@ def calcExprValueAdv(expr):
 
 
 def main():
-    f = open("../cpp/day_18_data.txt")
+    f = open("../input/day_18_input")
     sum = 0
     for line in f:
         line = line.strip('\n')

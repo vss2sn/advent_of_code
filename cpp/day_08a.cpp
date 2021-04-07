@@ -6,7 +6,7 @@
 #include <vector>
 
 int main() {
-  std::ifstream file{"day_8_data.txt"};
+  std::ifstream file{"../input/day_8_input"};
   std::vector<std::string> code_lines;
   std::string line;
   while (std::getline(file, line)) {

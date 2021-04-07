@@ -7,7 +7,7 @@
 constexpr int n_preamble = 25;
 
 int main() {
-  std::ifstream file{"day_9_data.txt"};
+  std::ifstream file{"../input/day_9_input"};
   int number;
   std::vector<int> list;
   std::vector<int> preamble_v;

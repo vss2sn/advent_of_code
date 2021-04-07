@@ -6,7 +6,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("day_6_data.txt");
+  file.open("../input/day_6_input");
 
   const std::string full_string = "abcdefghijklmnopqrstuvwxyz";
   int count = 0;

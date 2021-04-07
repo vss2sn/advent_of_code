@@ -173,7 +173,7 @@ def backtrack(puzzle_size, count, grid, edge_map, tiles):
     return False
 
 def main():
-    f = open("../cpp/day_20_data.txt")
+    f = open("../input/day_20_input")
     new_tile = Tile()
     tiles = dict()
     edge_map = dict()

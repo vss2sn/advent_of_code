@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def main():
-    file = open("../cpp/day_22_data.txt")
+    file = open("../input/day_22_input")
     players = list()
     player_decks = list()
     for line in file:

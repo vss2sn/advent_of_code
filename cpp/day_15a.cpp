@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 int main() {
-  std::fstream file{"day_15_data.txt"};
+  std::fstream file{"../input/day_15_input"};
   std::string line;
   std::getline(file, line);
   const std::string delimiter = ",";

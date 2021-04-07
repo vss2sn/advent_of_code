@@ -84,7 +84,7 @@ long long ChineseRemainderTheorem (const std::vector<std::pair<long long, long l
 
 
 int main() {
-  std::ifstream file{"day_13_data.txt"};
+  std::ifstream file{"../input/day_13_input"};
 
   long long arrive_abs; // attive at bus stop
   file >> arrive_abs;

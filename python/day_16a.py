@@ -45,7 +45,7 @@ def getTickets(f, rules):
     return tser
 
 def main():
-    f = open('../cpp/day_16_data.txt')
+    f = open('../input/day_16_input')
     rules = getRules(f)
     tser = getTickets(f, rules)
     print(tser)

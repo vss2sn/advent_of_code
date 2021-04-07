@@ -30,7 +30,7 @@ def getCooordinatesFromPath(path):
     return x, y
 
 def main():
-    f = open("../cpp/day_24_data.txt")
+    f = open("../input/day_24_input")
     isWhiteUp = dict()
     for path in f:
         path = path.strip('\n')

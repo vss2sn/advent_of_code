@@ -25,7 +25,7 @@ int getActiveNeigbourCount(const std::vector<std::vector<std::string>>& volume, 
 }
 
 int main() {
-  std::fstream file{"day_17_data.txt"};
+  std::fstream file{"../input/day_17_input"};
   std::string line;
   std::string inactive_part = std::string(n_steps, '.');
 

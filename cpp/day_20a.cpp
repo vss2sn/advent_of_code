@@ -33,7 +33,7 @@ struct Tile {
 };
 
 int main() {
-  std::fstream file{"day_20_data.txt"};
+  std::fstream file{"../input/day_20_input"};
   std::string line;
   Tile new_tile;
   std::unordered_map<int, std::pair<Tile, bool>> tiles;
