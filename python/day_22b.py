@@ -44,7 +44,7 @@ def PlayRecursiveCombat(players, player_decks):
     return players[0], player_decks, players
 
 def main():
-    file = open("../cpp/day_22_data.txt")
+    file = open("../input/day_22_input")
     players = list()
     player_decks = list()
     for line in file:

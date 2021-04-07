@@ -40,7 +40,7 @@ std::pair<int, int> ParseToGetCoordinates(const std::string& directions) {
 }
 
 int main() {
-  std::fstream file{"day_24_data.txt"};
+  std::fstream file{"../input/day_24_input"};
   std::string line;
   std::map<std::pair<int, int>, bool> tiles;
   while(std::getline(file, line)) {

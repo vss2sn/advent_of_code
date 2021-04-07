@@ -84,7 +84,7 @@ def ensureOTOMatch(rule_place): # one to one match
     return final_rule_places
 
 def main():
-    f = open('../cpp/day_16_data.txt')
+    f = open('../input/day_16_input')
     rules = getRules(f)
     rule_place, my_ticket = getRulePlace(f, rules)
     final_rule_places = ensureOTOMatch(rule_place)

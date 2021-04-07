@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_5_data.txt")
+    f = open("../input/day_5_input")
     max_seat_id = 0
     for line in f:
         min_row = 0

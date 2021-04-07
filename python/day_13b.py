@@ -19,7 +19,7 @@ def ChineseRemainderTheorem(drs):
 
 
 def main():
-    f = open("../cpp/day_13_data.txt")
+    f = open("../input/day_13_input")
     time = int(f.readline().strip().replace('\n', '').replace('\r', ''))
     buses = [[int(bus), int(bus) - i] for i, bus in enumerate(f.readline().strip().replace('\n', '').replace('\r', '').split(',')) if bus.isdigit()]
     result = ChineseRemainderTheorem(buses)

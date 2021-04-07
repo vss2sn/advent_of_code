@@ -19,7 +19,7 @@ def GenerateEncrytionKey(subject_number, loop_size):
     return value
 
 def main():
-  file = open("../cpp/day_25_data.txt")
+  file = open("../input/day_25_input")
   line = file.readline()
   line = line.strip('\n')
   card_public_key = int(line)

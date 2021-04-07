@@ -37,7 +37,7 @@ std::pair<uint64_t, uint64_t> SplitMask (const std::string& mask) {
 }
 
 int main() {
-  std::fstream file{"day_14_data.txt"};
+  std::fstream file{"../input/day_14_input"};
   std::string line;
   std::unordered_map<uint64_t, uint64_t> memory;
   uint64_t clear_mask = 0;

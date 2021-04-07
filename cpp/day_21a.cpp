@@ -27,7 +27,7 @@ std::vector<std::string> parse(const std::string& data, const std::string& delim
 }
 
 int main() {
-  std::fstream file{"day_21_data.txt"};
+  std::fstream file{"../input/day_21_input"};
   std::string line;
   const std::string delimiter = "(contains ";
   std::unordered_map<std::string, std::unordered_set<std::string>> allergen_map;

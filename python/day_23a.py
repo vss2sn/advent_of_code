@@ -3,7 +3,7 @@
 def main():
     n_rounds = 100
     n_lift = 3
-    f = open("../cpp/day_23_data.txt")
+    f = open("../input/day_23_input")
     line = f.readline().strip('\n')
     order_list = list()
     for char in line:

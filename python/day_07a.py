@@ -17,7 +17,7 @@ def n_outer_bag(is_contained_by, colour, outer_bag_set):
                 n_outer_bag(is_contained_by, bag, outer_bag_set)
 
 def main():
-    f = open("../cpp/day_7_data.txt")
+    f = open("../input/day_7_input")
     is_contained_by = dict()
     for line in f:
         line = line.strip().replace('\n', '').replace('\r', '')

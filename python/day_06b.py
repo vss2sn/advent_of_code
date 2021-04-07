@@ -9,7 +9,7 @@ def createSet():
     return myset
 
 def main():
-    f = open("../cpp/day_6_data.txt")
+    f = open("../input/day_6_input")
     count = 0
     answers = createSet()
     for line in f:

@@ -3,7 +3,7 @@
 import re
 
 def main():
-    f = open("../cpp/day_14_data.txt")
+    f = open("../input/day_14_input")
     mem_pattern = re.compile(r'mem\[(\d+)\] = (\d+)(.*?)')
     mem = dict()
     for line in f:

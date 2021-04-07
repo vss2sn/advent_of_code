@@ -3,7 +3,7 @@
 list_size = 25
 
 def main():
-    f = open("../cpp/day_9_data.txt")
+    f = open("../input/day_9_input")
     values = list()
     for i in range(0, list_size):
         line = f.readline().strip().replace('\n', '').replace('\r', '')

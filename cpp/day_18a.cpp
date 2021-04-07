@@ -65,7 +65,7 @@ long long calcExpressionValue(std::deque<std::string>& expr) {
 }
 
 int main() {
-  std::fstream file{"day_18_data.txt"};
+  std::fstream file{"../input/day_18_input"};
   std::string line;
   long long sum = 0;
   while(std::getline(file, line)) {

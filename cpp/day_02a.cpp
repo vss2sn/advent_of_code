@@ -5,7 +5,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("day_2_data.txt");
+  file.open("../input/day_2_input");
   std::unordered_set<int> entries;
   char dash, letter, colon;
   std::string pwd;

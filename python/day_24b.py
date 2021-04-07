@@ -63,7 +63,7 @@ def getCooordinatesFromPath(path):
     return x, y
 
 def main():
-    f = open("../cpp/day_24_data.txt")
+    f = open("../input/day_24_input")
     n_days = 100
 
     isWhiteUp = dict()

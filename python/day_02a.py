@@ -3,7 +3,7 @@
 import re
 
 def main():
-    f = open("../cpp/day_2_data.txt")
+    f = open("../input/day_2_input")
     match_pattern = re.compile(r'(\d+)-(\d+) ([a-z]): (.*)\n')
     count = 0
     for line in f:

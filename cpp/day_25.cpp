@@ -33,7 +33,7 @@ long long GenerateEncrytionKey(const long long subject_number, const long long l
 }
 
 int main() {
-  std::fstream file{"day_25_data.txt"};
+  std::fstream file{"../input/day_25_input"};
   std::string line;
 
   std::getline(file, line);

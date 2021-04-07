@@ -62,7 +62,7 @@ void SimplifyRules(
 }
 
 int main() {
-  std::fstream file{"day_19_data.txt"};
+  std::fstream file{"../input/day_19_input"};
   const std::regex rule_pattern_known(R"((\d+): \"([a-z]+)\")");
   const std::regex rule_pattern_unknown(R"((\d+): ([0-9| ]+))");
   std::unordered_map<int, std::vector<std::string>> known_rules;

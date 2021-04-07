@@ -3,7 +3,7 @@
 import copy
 
 def main():
-    file = open("../cpp/day_21_data.txt")
+    file = open("../input/day_21_input")
     atoi = dict() # allergens to ingredients
     itoc = dict() # ingredients to count
     for line in file:

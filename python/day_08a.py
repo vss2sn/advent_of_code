@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_8_data.txt")
+    f = open("../input/day_8_input")
     lines = [line.strip().replace('\n', '').replace('\r','') for line in f]
     n_lines = len(lines)
     execed_list = [False] * n_lines

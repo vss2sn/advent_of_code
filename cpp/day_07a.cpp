@@ -19,7 +19,7 @@ void findNumberOfOuterMotBags(const std::string& colour,
 
 int main() {
   std::ifstream file;
-  file.open("day_7_data.txt");
+  file.open("../input/day_7_input");
   std::unordered_map<std::string, std::vector<std::string>> contains;
   std::unordered_map<std::string, std::vector<std::string>> can_be_contained_by;
   std::string rule;

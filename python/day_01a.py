@@ -2,7 +2,7 @@
 
 def main():
     total = 2020
-    f = open("../cpp/day_1_data.txt")
+    f = open("../input/day_1_input")
     numbers = set()
     for line in f:
         line = line.strip().replace('\n', '').replace('\r', '')

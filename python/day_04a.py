@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_4_data.txt")
+    f = open("../input/day_4_input")
     key_fields = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     n_valid = 0;
     n_fields = 0;

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_12_data.txt")
+    f = open("../input/day_12_input")
     position = [0, 0]
     dir = 0
     for line in f:

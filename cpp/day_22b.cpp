@@ -68,7 +68,7 @@ std::tuple<int, std::vector<std::deque<int>>, std::vector<int>> PlayRecursiceCom
 }
 
 int main() {
-  std::fstream file{"day_22_data.txt"};
+  std::fstream file{"../input/day_22_input"};
   std::string line;
   std::vector<std::deque<int>> player_decks;
   std::vector<int> players;

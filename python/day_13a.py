@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_13_data.txt")
+    f = open("../input/day_13_input")
     time = int(f.readline().strip().replace('\n', '').replace('\r', ''))
     buses = [int(bus) for bus in f.readline().strip().replace('\n', '').replace('\r', '').replace('x,', '').split(',')]
     rem  = [min(buses), buses.index(min(buses))]

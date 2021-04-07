@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import copy
 def main():
-    f = open("../cpp/day_15_data.txt")
+    f = open("../input/day_15_input")
     inputs = f.readline().strip().replace('\r', '').replace('\n', '').split(',')
     numbers = dict()
     count = 0

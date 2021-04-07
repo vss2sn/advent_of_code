@@ -90,7 +90,7 @@ void iterateOverNeighbours(bool is_center, const T& input, F& f, std::deque<size
 }
 
 int main() {
-  std::fstream file{"day_17_data.txt"};
+  std::fstream file{"../input/day_17_input"};
   std::string line;
 
   std::vector<std::string> g_plane;

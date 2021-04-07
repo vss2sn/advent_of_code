@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def main():
-    f = open("../cpp/day_4_data.txt")
+    f = open("../input/day_4_input")
     key_fields = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     eye_colours = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
     rules = {"byr": lambda x : int(x) >= 1920 and int(x) <= 2002, \

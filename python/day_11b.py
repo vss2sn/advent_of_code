@@ -53,7 +53,7 @@ def printSeats(seats):
         print(line)
 
 def main():
-    f = open("../cpp/day_11_data.txt")
+    f = open("../input/day_11_input")
     seats = list()
     for line in f:
         line = line.strip().replace('\r', '').replace('\n', '')

@@ -3,7 +3,7 @@
 #include <vector>
 
 int main() {
-  std::ifstream file{"day_12_data.txt"};
+  std::ifstream file{"../input/day_12_input"};
   std::string com_inst;
   int dir = 0;
   int pos_x = 0;

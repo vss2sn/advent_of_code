@@ -5,7 +5,7 @@ import copy
 list_size = 25
 
 def main():
-    f = open("../cpp/day_9_data.txt")
+    f = open("../input/day_9_input")
     values = list()
     all_values = list()
     new_number = 0

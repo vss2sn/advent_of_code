@@ -8,7 +8,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("day_4_data.txt");
+  file.open("../input/day_4_input");
   std::string text;
   int count = 0;
   int fields = 0;

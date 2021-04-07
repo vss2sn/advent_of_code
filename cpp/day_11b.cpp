@@ -73,7 +73,7 @@ bool updateCharMapAtCoord(std::vector<std::string>& charmap,
 }
 
 int main() {
-  std::ifstream file{"day_11_data.txt"};
+  std::ifstream file{"../input/day_11_input"};
   std::string line;
   std::vector<std::string> charmap;
   while(std::getline(file, line)) {
