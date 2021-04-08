@@ -14,12 +14,12 @@ int main() {
   preamble_v.reserve(n_preamble);
 
   // Create preamble
-  while(n_preamble > preamble_v.size() && file >> number) {
+  while (n_preamble > preamble_v.size() && file >> number) {
     preamble_v.push_back(number);
     preamble_q.push(number);
   }
 
-  while(file >> number) {
+  while (file >> number) {
     int begin = 0;
     int end = preamble_v.size() - 1;
     std::sort(std::begin(preamble_v), std::end(preamble_v));
@@ -30,10 +30,11 @@ int main() {
         const auto element_to_remove = preamble_q.front();
         preamble_q.pop();
         preamble_q.push(number);
-        *std::find(std::begin(preamble_v), std::end(preamble_v), element_to_remove) = number;
+        *std::find(std::begin(preamble_v), std::end(preamble_v),
+                   element_to_remove) = number;
         found = true;
         break;
-      }  else if (sum > number) {
+      } else if (sum > number) {
         end--;
       } else if (sum < number) {
         begin++;
@@ -41,7 +42,7 @@ int main() {
         std::cout << "The two numbers are equal" << '\n';
       }
     }
-    if(!found) {
+    if (!found) {
       std::cout << "Number cannot be created from preamble: " << number << '\n';
       break;
     }

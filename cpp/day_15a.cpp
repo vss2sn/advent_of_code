@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <unordered_map>
 
 int main() {
@@ -11,16 +11,18 @@ int main() {
   std::size_t end = line.find(delimiter);
   std::unordered_map<int, int> spoken_numbers;
   while (end != std::string::npos) {
-    spoken_numbers.insert({std::stoi(line.substr(start, end - start)), spoken_numbers.size()});
+    spoken_numbers.insert(
+        {std::stoi(line.substr(start, end - start)), spoken_numbers.size()});
     start = end + delimiter.size();
     end = line.find(delimiter, start);
   }
-  // spoken_numbers.insert({std::stoi(line.substr(start, end - start)), spoken_numbers.size()});
-  // std::cout << std::stoi(line.substr(start, end - start)) << '\n';
+  // spoken_numbers.insert({std::stoi(line.substr(start, end - start)),
+  // spoken_numbers.size()}); std::cout << std::stoi(line.substr(start, end -
+  // start)) << '\n';
   long long new_number = std::stoi(line.substr(start, end - start));
   size_t count = spoken_numbers.size();
-  while(count < 2019) {
-    if(auto it = spoken_numbers.find(new_number); it != spoken_numbers.end()) {
+  while (count < 2019) {
+    if (auto it = spoken_numbers.find(new_number); it != spoken_numbers.end()) {
       new_number = count - spoken_numbers[new_number];
       it->second = count;
     } else {

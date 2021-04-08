@@ -16,21 +16,21 @@ int convertSeatBSPToSeatID(const std::string& seat_bsp) {
   double current_col_max = n_cols;
   double current_col_min = first_col;
 
-  for(int i = 0; i < row_chars; ++i) {
-    if(seat_bsp[i] == 'F') {
+  for (int i = 0; i < row_chars; ++i) {
+    if (seat_bsp[i] == 'F') {
       current_row_max = (current_row_max + current_row_min) / 2;
     } else {
       current_row_min = (current_row_max + current_row_min) / 2;
     }
   }
-  for(int i = row_chars; i < (row_chars + col_chars); ++i) {
-    if(seat_bsp[i] == 'L') {
+  for (int i = row_chars; i < (row_chars + col_chars); ++i) {
+    if (seat_bsp[i] == 'L') {
       current_col_max = (current_col_max + current_col_min) / 2;
     } else {
       current_col_min = (current_col_max + current_col_min) / 2;
     }
   }
-  return (current_row_min) * n_cols  + (current_col_min);
+  return (current_row_min)*n_cols + (current_col_min);
 }
 
 int main() {
@@ -39,8 +39,9 @@ int main() {
 
   std::string seat_bsp;
   int high_seat = 0;
-  while(std::getline(file, seat_bsp)) {
-    high_seat = std::max(convertSeatBSPToSeatID(seat_bsp), high_seat); // Human readable seat
+  while (std::getline(file, seat_bsp)) {
+    high_seat = std::max(convertSeatBSPToSeatID(seat_bsp),
+                         high_seat);  // Human readable seat
   }
 
   std::cout << high_seat << '\n';

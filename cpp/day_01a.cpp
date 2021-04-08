@@ -8,9 +8,9 @@ int main() {
   file.open("../input/day_1_input");
   std::unordered_set<int> entries;
   int num = 0;
-  while(file >> num) {
+  while (file >> num) {
     const int delta = 2020 - num;
-    if(entries.find(delta) != entries.end()) {
+    if (entries.find(delta) != entries.end()) {
       // std::cout << delta * num << '\n';
       return delta * num;
     } else {

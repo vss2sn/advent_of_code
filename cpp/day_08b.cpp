@@ -5,23 +5,24 @@
 #include <vector>
 
 std::tuple<bool, int> DetectLoop(std::vector<std::string>& code_lines,
-                                 std::vector<bool> executed,  /* copy, not ref*/
+                                 std::vector<bool> executed, /* copy, not ref*/
                                  int line_n) {
   int acc = 0;
   bool loop_found = false;
-  while(line_n < code_lines.size()) {
-    if(executed[line_n]) {
+  while (line_n < code_lines.size()) {
+    if (executed[line_n]) {
       loop_found = true;
       break;
     }
     executed[line_n] = true;
-    if(code_lines[line_n].substr(0,3) == "nop") {
+    if (code_lines[line_n].substr(0, 3) == "nop") {
       ++line_n;
-    } else if (code_lines[line_n].substr(0,3) == "acc") {
+    } else if (code_lines[line_n].substr(0, 3) == "acc") {
       acc += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
       ++line_n;
-    } else if (code_lines[line_n].substr(0,3) == "jmp") {
-      line_n += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
+    } else if (code_lines[line_n].substr(0, 3) == "jmp") {
+      line_n +=
+          stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
     }
   }
 
@@ -42,10 +43,9 @@ int main() {
   int acc = 0;
   bool loop_found = false;
 
-  while(line_n < code_lines.size()) {
-
+  while (line_n < code_lines.size()) {
     // Execute all acc instructions
-    while(code_lines[line_n].substr(0,3) == "acc") {
+    while (code_lines[line_n].substr(0, 3) == "acc") {
       executed[line_n] = true;
       acc += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
       ++line_n;
@@ -54,13 +54,15 @@ int main() {
     // Inverse and execute instruction
     candidate_for_change = line_n;
     executed[line_n] = true;
-    if(code_lines[line_n].substr(0,3) == "nop") {
-      line_n += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
-    } else if (code_lines[line_n].substr(0,3) == "jmp") {
+    if (code_lines[line_n].substr(0, 3) == "nop") {
+      line_n +=
+          stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
+    } else if (code_lines[line_n].substr(0, 3) == "jmp") {
       ++line_n;
     }
 
-    if(std::tuple<bool, int> result = DetectLoop(code_lines, executed, line_n); !std::get<0>(result)) {
+    if (std::tuple<bool, int> result = DetectLoop(code_lines, executed, line_n);
+        !std::get<0>(result)) {
       executed[line_n] = true;
       acc += std::get<1>(result);
       break;
@@ -69,13 +71,14 @@ int main() {
     // Execute the instruction without inverting
     line_n = candidate_for_change;
     executed[line_n] = true;
-    if(code_lines[line_n].substr(0,3) == "nop") {
+    if (code_lines[line_n].substr(0, 3) == "nop") {
       ++line_n;
-    } else if (code_lines[line_n].substr(0,3) == "acc") {
+    } else if (code_lines[line_n].substr(0, 3) == "acc") {
       acc += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
       ++line_n;
-    } else if (code_lines[line_n].substr(0,3) == "jmp") {
-      line_n += stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
+    } else if (code_lines[line_n].substr(0, 3) == "jmp") {
+      line_n +=
+          stoi(code_lines[line_n].substr(4, code_lines[line_n].size() - 4));
     }
   }
 
