@@ -4,16 +4,17 @@ import copy
 
 list_size = 25
 
+
 def main():
     f = open("../input/day_9_input")
     values = list()
     all_values = list()
     new_number = 0
     for i in range(0, list_size):
-        line = f.readline().strip().replace('\n', '').replace('\r', '')
+        line = f.readline().strip().replace("\n", "").replace("\r", "")
         values.append(int(line))
     for line in f:
-        line = f.readline().strip().replace('\n', '').replace('\r', '')
+        line = f.readline().strip().replace("\n", "").replace("\r", "")
         new_number = int(line)
         allowed = False
         for i in range(0, list_size):
@@ -47,6 +48,7 @@ def main():
         else:
             print("WTH")
     return 0
+
 
 if __name__ == "__main__":
     main()

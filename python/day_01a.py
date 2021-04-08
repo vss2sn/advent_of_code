@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
+
 def main():
     total = 2020
     f = open("../input/day_1_input")
     numbers = set()
     for line in f:
-        line = line.strip().replace('\n', '').replace('\r', '')
+        line = line.strip().replace("\n", "").replace("\r", "")
         num = int(line)
         diff = total - num
         if diff in numbers:
@@ -15,5 +16,6 @@ def main():
             numbers.add(num)
     return 0
 
+
 if __name__ == "__main__":
-    main()        
+    main()

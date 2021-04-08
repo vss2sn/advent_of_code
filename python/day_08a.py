@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+
 def main():
     f = open("../input/day_8_input")
-    lines = [line.strip().replace('\n', '').replace('\r','') for line in f]
+    lines = [line.strip().replace("\n", "").replace("\r", "") for line in f]
     n_lines = len(lines)
     execed_list = [False] * n_lines
     line = 0
@@ -23,6 +24,7 @@ def main():
         else:
             print("WTH")
     return 0
+
 
 if __name__ == "__main__":
     main()

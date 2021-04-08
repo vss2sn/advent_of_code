@@ -4,6 +4,7 @@ import math
 import copy
 import builtins
 
+
 class Tile:
     def __init__(self):
         self.used = False
@@ -40,20 +41,21 @@ class Tile:
             edge[::-1]
         flipped = not flipped
 
+
 def main():
     f = open("../input/day_20_input")
     new_tile = Tile()
     tiles = dict()
     edge_map = dict()
     for line in f:
-        line = line.strip('\n')
+        line = line.strip("\n")
         if line == "":
             new_tile.createEdges()
             tiles[new_tile.id] = copy.deepcopy(new_tile)
             new_tile = Tile()
             continue
         elif line[0:4] == "Tile":
-            new_tile.id = int(line[5:len(line) - 1])
+            new_tile.id = int(line[5 : len(line) - 1])
         else:
             new_tile.image.append(line)
     if new_tile.id != -1:
@@ -88,11 +90,12 @@ def main():
         if len(tile.neighbour_ids) == 2:
             corner_ids.append(id)
 
-    product = 1;
+    product = 1
     for corner_id in corner_ids:
-        product *= corner_id;
+        product *= corner_id
     print(product)
     return product
+
 
 if __name__ == "__main__":
     main()

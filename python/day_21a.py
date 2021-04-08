@@ -2,16 +2,17 @@
 
 import copy
 
+
 def main():
     file = open("../input/day_21_input")
-    atoi = dict() # allergens to ingredients
-    itoc = dict() # ingredients to count
+    atoi = dict()  # allergens to ingredients
+    itoc = dict()  # ingredients to count
     for line in file:
-        line = line.replace('(', '').replace(')', '').strip('\n').replace(',', '')
+        line = line.replace("(", "").replace(")", "").strip("\n").replace(",", "")
         ingredients, allergens = line.split("contains ")
-        ingredients = ingredients.split(' ')
-        ingredients.remove('')
-        allergens = allergens.split(' ')
+        ingredients = ingredients.split(" ")
+        ingredients.remove("")
+        allergens = allergens.split(" ")
         # print(ingredients)
         # print(allergens)
         for allergen in allergens:
@@ -47,6 +48,7 @@ def main():
             count = count + itoc[ingredient]
     print(count)
     return count
+
 
 if __name__ == "__main__":
     main()
