@@ -2,11 +2,12 @@
 
 list_size = 25
 
+
 def main():
     f = open("../input/day_9_input")
     values = list()
     for i in range(0, list_size):
-        line = f.readline().strip().replace('\n', '').replace('\r', '')
+        line = f.readline().strip().replace("\n", "").replace("\r", "")
         values.append(int(line))
     for line in f:
         new_number = int(line)
@@ -24,6 +25,7 @@ def main():
             print(new_number)
             return new_number
     return 0
+
 
 if __name__ == "__main__":
     main()

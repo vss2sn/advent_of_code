@@ -3,8 +3,8 @@
 import re
 import copy
 
-class Rule:
 
+class Rule:
     def __init__(self, name, min_val1, max_val1, min_val2, max_val2):
         self.name = name
         self.min_val1 = int(min_val1)
@@ -13,19 +13,23 @@ class Rule:
         self.max_val2 = int(max_val2)
 
     def valid(self, val):
-        return (val >= self.min_val1 and val <= self.max_val1) or (val >= self.min_val2 and val <= self.max_val2)
+        return (val >= self.min_val1 and val <= self.max_val1) or (
+            val >= self.min_val2 and val <= self.max_val2
+        )
+
 
 def getRules(f):
-    pattern = re.compile(r'(.*?): (\d+)-(\d+) or (\d+)-(\d+)(.*?)')
+    pattern = re.compile(r"(.*?): (\d+)-(\d+) or (\d+)-(\d+)(.*?)")
     rules = dict()
     for line in f:
-        line = line.strip().replace('\r', '').replace('\n', '')
+        line = line.strip().replace("\r", "").replace("\n", "")
         if re.match(pattern, line):
             vals = re.match(pattern, line).groups()
             rules[vals[0]] = Rule(vals[0], vals[1], vals[2], vals[3], vals[4])
         else:
             break
     return rules
+
 
 def getRulePlace(f, rules):
 
@@ -36,36 +40,39 @@ def getRulePlace(f, rules):
     for name in rules:
         rule_place[name] = copy.deepcopy(places)
 
-    pattern = re.compile(r'(.*?):((.*?))')
+    pattern = re.compile(r"(.*?):((.*?))")
     my_ticket = list()
     for line in f:
         if re.match(pattern, line):
             continue
-        line = line.strip().replace('\r', '').replace('\n', '')
+        line = line.strip().replace("\r", "").replace("\n", "")
         if line == "":
             continue
         else:
-            my_ticket = line.split(',')
+            my_ticket = line.split(",")
             my_ticket = [int(i) for i in my_ticket]
             break
 
     for line in f:
         if re.match(pattern, line):
             continue
-        line = line.strip().replace('\r', '').replace('\n', '')
+        line = line.strip().replace("\r", "").replace("\n", "")
         if line == "":
             continue
         else:
-            vals = line.split(',')
+            vals = line.split(",")
             for index, val in enumerate(vals):
-                if any(rule.valid(int(val)) for rule in rules.values()): # check if ticket valid
+                if any(
+                    rule.valid(int(val)) for rule in rules.values()
+                ):  # check if ticket valid
                     for name in rules:
                         if not rules[name].valid(int(val)):
                             if index in rule_place[name]:
                                 rule_place[name].remove(index)
     return rule_place, my_ticket
 
-def ensureOTOMatch(rule_place): # one to one match
+
+def ensureOTOMatch(rule_place):  # one to one match
     final_rule_places = copy.deepcopy(rule_place)
     to_remove = 0
     changed = True
@@ -83,8 +90,9 @@ def ensureOTOMatch(rule_place): # one to one match
                     rule_place[rule].remove(to_remove)
     return final_rule_places
 
+
 def main():
-    f = open('../input/day_16_input')
+    f = open("../input/day_16_input")
     rules = getRules(f)
     rule_place, my_ticket = getRulePlace(f, rules)
     final_rule_places = ensureOTOMatch(rule_place)
@@ -93,7 +101,6 @@ def main():
         if key[0:9] == "departure":
             product *= my_ticket[final_rule_places[key]]
     print(product)
-
 
 
 if __name__ == "__main__":

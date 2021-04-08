@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 
+
 def main():
     total = 2020
     f = open("../input/day_1_input")
     numbers = list()
     for line in f:
-        line = line.strip().replace('\n', '').replace('\r', '')
+        line = line.strip().replace("\n", "").replace("\r", "")
         numbers.append(int(line))
         numbers.sort()
     for start in range(0, len(numbers)):
         mid = start + 1
         end = len(numbers) - 1
-        while (mid < end):
+        while mid < end:
             rem = total - numbers[start] - numbers[mid] - numbers[end]
             if rem == 0:
                 print(numbers[start] * numbers[mid] * numbers[end])
@@ -23,6 +24,7 @@ def main():
             else:
                 print("WTH")
     return 0
+
 
 if __name__ == "__main__":
     main()

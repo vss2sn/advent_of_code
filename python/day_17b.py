@@ -3,25 +3,28 @@ import itertools
 import operator
 import copy
 
+
 def parseInputAndCreateCells(file_name, n_dims):
     f = open(file_name)
-    raw_data = f.readlines();
+    raw_data = f.readlines()
     cells = set()
     for y, line in enumerate(raw_data):
         # line = line.strip().replace('\r', '').replace('\n', '')
         for x, cell_val in enumerate(line):
-            if cell_val == '#':
+            if cell_val == "#":
                 cells.add((x, y) + (0,) * (n_dims - 2))
     return cells
+
 
 def getBounds(cells, n_dims):
     res = list()
     for i in range(n_dims):
         res.append([0] * 2)
     for i in range(n_dims):
-        res[i][0] = (min(cells, key=lambda x: x[i])[i] - 1)
-        res[i][1] = (max(cells, key=lambda x: x[i])[i] + 2)
+        res[i][0] = min(cells, key=lambda x: x[i])[i] - 1
+        res[i][1] = max(cells, key=lambda x: x[i])[i] + 2
     return res
+
 
 def countActiveNeighbours(cell, cells, n_dims):
     bounds = getBounds(cells, n_dims)
@@ -33,6 +36,7 @@ def countActiveNeighbours(cell, cells, n_dims):
             if tuple(map(operator.add, cell, diff)) in cells:
                 n_count += 1
     return n_count
+
 
 def stepHelper(cell, cells, updated_cells, n_dims, bounds):
     if len(cell) == n_dims:
@@ -47,11 +51,13 @@ def stepHelper(cell, cells, updated_cells, n_dims, bounds):
             new_cell = cell + (val,)
             stepHelper(new_cell, cells, updated_cells, n_dims, bounds)
 
+
 def step(cells, n_dims, bounds):
     updated_cells = set()
     cell = tuple()
     stepHelper(cell, cells, updated_cells, n_dims, bounds)
     return updated_cells
+
 
 def main():
     n_steps = 6
@@ -63,6 +69,7 @@ def main():
         bounds = getBounds(cells, n_dims)
         cells = step(cells, n_dims, bounds)
         print(len(cells))
+
 
 if __name__ == "__main__":
     main()

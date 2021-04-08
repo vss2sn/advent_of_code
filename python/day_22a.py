@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 
+
 def main():
     file = open("../input/day_22_input")
     players = list()
     player_decks = list()
     for line in file:
-        line = line.strip('\n')
+        line = line.strip("\n")
         if line == "":
             continue
         if line[0:6] == "Player":
             player_decks.append([])
-            players.append(int(line[7:len(line)-1]))
+            players.append(int(line[7 : len(line) - 1]))
         else:
             player_decks[-1].append(int(line))
     total_players = len(players)
@@ -36,7 +37,7 @@ def main():
     score = 0
     for player_deck in player_decks:
         for i in range(0, len(player_deck)):
-            score = score + ((i+1) * player_deck[len(player_deck) - 1 - i]);
+            score = score + ((i + 1) * player_deck[len(player_deck) - 1 - i])
     print(score)
     return score
 

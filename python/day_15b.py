@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 import copy
+
+
 def main():
     f = open("../input/day_15_input")
-    inputs = f.readline().strip().replace('\r', '').replace('\n', '').split(',')
+    inputs = f.readline().strip().replace("\r", "").replace("\n", "").split(",")
     numbers = dict()
     count = 0
     for input in inputs:
         numbers[int(input)] = count
         count += 1
-    cur = 0;
+    cur = 0
     while count < 29999999:
         if cur in numbers.keys():
             temp = copy.deepcopy(cur)
@@ -20,6 +22,7 @@ def main():
         count += 1
     print(cur)
     return cur
+
 
 if __name__ == "__main__":
     main()

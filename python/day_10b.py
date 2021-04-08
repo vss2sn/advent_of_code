@@ -3,6 +3,7 @@
 lower_delta = 1
 upper_delta = 3
 
+
 def NArrangements(index, jolts, n_arr):
     if jolts[index] in n_arr.keys():
         return n_arr[jolts[index]]
@@ -13,11 +14,12 @@ def NArrangements(index, jolts, n_arr):
     n_arr[jolts[index]] = count
     return count
 
+
 def main():
     f = open("../input/day_10_input")
     jolts = list()
     for line in f:
-        line = line.strip().replace('\n', '').replace('\r', '')
+        line = line.strip().replace("\n", "").replace("\r", "")
         jolts.append(int(line))
     jolts.append(0)
     jolts.sort()
@@ -26,6 +28,7 @@ def main():
     count = NArrangements(len(jolts) - 1, jolts, n_arr)
     print(count)
     return count
+
 
 if __name__ == "__main__":
     main()

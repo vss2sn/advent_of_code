@@ -4,6 +4,7 @@ import math
 import copy
 import builtins
 
+
 class Tile:
     def __init__(self):
         self.used = False
@@ -57,27 +58,31 @@ class Tile:
             new_image = copy.deepcopy(self.image)
             for i in range(0, len(self.image)):
                 for j in range(0, len(self.image[i])):
-                    new_image[len(self.image[i]) - j - 1][len(self.image) - i - 1] = self.image[i][j];
+                    new_image[len(self.image[i]) - j - 1][
+                        len(self.image) - i - 1
+                    ] = self.image[i][j]
             self.image = copy.deepcopy(new_image)
         for r in range(0, self.rotation):
             new_image = copy.deepcopy(self.image)
             for i in range(0, len(self.image)):
                 for j in range(0, len(self.image[i])):
-                    new_image[j][len(self.image) - i - 1] = self.image[i][j];
+                    new_image[j][len(self.image) - i - 1] = self.image[i][j]
             self.image = copy.deepcopy(new_image)
+
 
 def RotateImage(image):
     new_image = copy.deepcopy(image)
     for i in range(0, len(image)):
         for j in range(0, len(image[i])):
-            new_image[j][len(image) - i - 1] = image[i][j];
+            new_image[j][len(image) - i - 1] = image[i][j]
     return new_image
+
 
 def FlipImage(image):
     new_image = copy.deepcopy(image)
     for i in range(0, len(image)):
         for j in range(0, len(image[i])):
-            new_image[len(image[i]) - j - 1][len(image) - i - 1] = image[i][j];
+            new_image[len(image[i]) - j - 1][len(image) - i - 1] = image[i][j]
     return new_image
 
 
@@ -94,22 +99,23 @@ def OrientTileToMatchOnSide(edge, cur_tile, edge_dir):
         else:
             cur_tile.Rotate()
 
+
 def CheckForPattern(complete_image, pattern):
     max_row_size = 0
     relevant_points = list()
     for i in range(0, len(pattern)):
-      relevant_points.append([])
-      for j in range(0, len(pattern[i])):
-          max_row_size = max(max_row_size, len(pattern[i]))
-          if pattern[i][j] == '#':
-              relevant_points[i].append(j)
-    count = 0;
+        relevant_points.append([])
+        for j in range(0, len(pattern[i])):
+            max_row_size = max(max_row_size, len(pattern[i]))
+            if pattern[i][j] == "#":
+                relevant_points[i].append(j)
+    count = 0
     for i in range(0, len(complete_image) - len(relevant_points)):
         for j in range(0, len(complete_image[i]) - max_row_size):
             match = True
             for pi in range(0, len(relevant_points)):
                 for pj in range(0, len(relevant_points[pi])):
-                    if complete_image[i+pi][j+relevant_points[pi][pj]] != '#':
+                    if complete_image[i + pi][j + relevant_points[pi][pj]] != "#":
                         match = False
                         break
                 if not match:
@@ -117,6 +123,7 @@ def CheckForPattern(complete_image, pattern):
             if match:
                 count = count + 1
     return count
+
 
 def backtrack(puzzle_size, count, grid, edge_map, tiles):
     if count == len(tiles):
@@ -129,7 +136,7 @@ def backtrack(puzzle_size, count, grid, edge_map, tiles):
         ids = edge_map[bottom_edge]
         for id in ids:
             if id == grid[row - 1][0] or tiles[id].used:
-                continue;
+                continue
             cur_tile = tiles[id]
             cur_tile.used = True
             grid[row][col] = cur_tile.id
@@ -138,13 +145,13 @@ def backtrack(puzzle_size, count, grid, edge_map, tiles):
                 return True
             else:
                 cur_tile.used = False
-                grid[row][col] = -1;
+                grid[row][col] = -1
     elif row == 0:
         right_edge = tiles[grid[row][col - 1]].getRightEdge()
         ids = edge_map[right_edge]
         for id in ids:
             if id == grid[row][col - 1] or tiles[id].used:
-                continue;
+                continue
             cur_tile = tiles[id]
             cur_tile.used = True
             grid[row][col] = cur_tile.id
@@ -153,24 +160,27 @@ def backtrack(puzzle_size, count, grid, edge_map, tiles):
                 return True
             else:
                 cur_tile.used = False
-                grid[row][col] = -1;
+                grid[row][col] = -1
     elif row != 0:
         bottom_edge = tiles[grid[row - 1][col]].getBottomEdge()
         ids = edge_map[bottom_edge]
         for id in ids:
             if id == grid[row - 1][col] or tiles[id].used:
-                continue;
+                continue
             cur_tile = tiles[id]
             cur_tile.used = True
             grid[row][col] = cur_tile.id
             OrientTileToMatchOnSide(bottom_edge, cur_tile, 0)
             right_edge = tiles[grid[row][col - 1]].getRightEdge()
-            if cur_tile.edges[3] == right_edge and backtrack(puzzle_size, count + 1, grid, edge_map, tiles):
+            if cur_tile.edges[3] == right_edge and backtrack(
+                puzzle_size, count + 1, grid, edge_map, tiles
+            ):
                 return True
             else:
                 cur_tile.used = False
-                grid[row][col] = -1;
+                grid[row][col] = -1
     return False
+
 
 def main():
     f = open("../input/day_20_input")
@@ -178,14 +188,14 @@ def main():
     tiles = dict()
     edge_map = dict()
     for line in f:
-        line = line.strip('\n')
+        line = line.strip("\n")
         if line == "":
             new_tile.createEdges()
             tiles[new_tile.id] = copy.deepcopy(new_tile)
             new_tile = Tile()
             continue
         elif line[0:4] == "Tile":
-            new_tile.id = int(line[5:len(line) - 1])
+            new_tile.id = int(line[5 : len(line) - 1])
         else:
             new_tile.image_str.append(line)
             new_tile.image.append([])
@@ -239,7 +249,7 @@ def main():
             tiles[corner_id].Rotate()
         if found:
             break
-        tiles[corner_id].Flip();
+        tiles[corner_id].Flip()
         for i in range(0, 4):
             if backtrack(puzzle_size, count, grid, edge_map, tiles):
                 found = True
@@ -259,8 +269,14 @@ def main():
                 #     complete_image.append([])
                 if i * (len(tile_img) - 2) + k >= len(complete_image):
                     complete_image.append([])
-                complete_image[i * (len(tile_img) - 2) + k].extend(tile_img[k+1][1:len(tile_img[k]) - 1]);
-    pattern_temp = ["                  # ", "#    ##    ##    ###", " #  #  #  #  #  #   "]
+                complete_image[i * (len(tile_img) - 2) + k].extend(
+                    tile_img[k + 1][1 : len(tile_img[k]) - 1]
+                )
+    pattern_temp = [
+        "                  # ",
+        "#    ##    ##    ###",
+        " #  #  #  #  #  #   ",
+    ]
     pattern = list()
     for i in range(0, len(pattern_temp)):
         pattern.append([])
@@ -270,7 +286,7 @@ def main():
     monster_size = 0
     for row in pattern:
         for ele in row:
-            if ele == '#':
+            if ele == "#":
                 monster_size = monster_size + 1
 
     n_monsters = 0
@@ -287,11 +303,12 @@ def main():
     roughness = 0
     for i in range(0, len(complete_image)):
         for j in range(0, len(complete_image[i])):
-            if complete_image[i][j] == '#':
+            if complete_image[i][j] == "#":
                 roughness = roughness + 1
     roughness = roughness - (n_monsters * monster_size)
     print(roughness)
     return roughness
+
 
 if __name__ == "__main__":
     main()

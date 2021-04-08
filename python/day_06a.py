@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 
+
 def main():
     f = open("../input/day_6_input")
     count = 0
     answers = set()
     for line in f:
-        line = line.strip().replace('\r','').replace('\n','')
+        line = line.strip().replace("\r", "").replace("\n", "")
         if line == "":
             count += len(answers)
             answers = set()
@@ -15,6 +16,7 @@ def main():
     count += len(answers)
     print(count)
     return count
+
 
 if __name__ == "__main__":
     main()
