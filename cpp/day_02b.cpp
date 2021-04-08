@@ -11,7 +11,7 @@ int main() {
   std::string pwd;
   int i1, i2;
   int count = 0;
-  while(file >> i1 >> dash >> i2 >> letter >> colon >> pwd) {
+  while (file >> i1 >> dash >> i2 >> letter >> colon >> pwd) {
     const bool valid = (pwd[i1 - 1] == letter) ^ (pwd[i2 - 1] == letter);
     // std::cout << (valid ? "valid" : "invalid") << '\n';
     if (valid) {

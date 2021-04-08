@@ -15,13 +15,13 @@ int main() {
   preamble_v.reserve(n_preamble);
 
   // Create preamble
-  while(n_preamble > preamble_v.size() && file >> number) {
+  while (n_preamble > preamble_v.size() && file >> number) {
     preamble_v.push_back(number);
     preamble_q.push(number);
     list.push_back(number);
   }
 
-  while(file >> number) {
+  while (file >> number) {
     int begin = 0;
     int end = preamble_v.size() - 1;
     std::sort(std::begin(preamble_v), std::end(preamble_v));
@@ -32,10 +32,11 @@ int main() {
         const auto element_to_remove = preamble_q.front();
         preamble_q.pop();
         preamble_q.push(number);
-        *std::find(std::begin(preamble_v), std::end(preamble_v), element_to_remove) = number;
+        *std::find(std::begin(preamble_v), std::end(preamble_v),
+                   element_to_remove) = number;
         found = true;
         break;
-      }  else if (sum > number) {
+      } else if (sum > number) {
         end--;
       } else if (sum < number) {
         begin++;
@@ -43,7 +44,7 @@ int main() {
         std::cout << "The two numbers are equal" << '\n';
       }
     }
-    if(!found) {
+    if (!found) {
       std::cout << "Number cannot be created from preamble: " << number << '\n';
       break;
     } else {
@@ -56,10 +57,10 @@ int main() {
   int end = list.size() - 1;
   int sum = list[begin] + list[end];
   while (begin < end && begin >= 0) {
-    if(sum > invalid_number) {
+    if (sum > invalid_number) {
       sum -= list[end];
       --end;
-      if(begin == end) {
+      if (begin == end) {
         --begin;
         sum += list[begin];
       }
@@ -72,8 +73,10 @@ int main() {
     }
   }
 
-  const int min_cont = *std::min_element(std::next(std::begin(list), begin), std::next(std::begin(list), end));
-  const int max_cont = *std::max_element(std::next(std::begin(list), begin), std::next(std::begin(list), end));
+  const int min_cont = *std::min_element(std::next(std::begin(list), begin),
+                                         std::next(std::begin(list), end));
+  const int max_cont = *std::max_element(std::next(std::begin(list), begin),
+                                         std::next(std::begin(list), end));
 
   const int encrytion_weakness = min_cont + max_cont;
   std::cout << "Encrytion weakness " << encrytion_weakness << '\n';

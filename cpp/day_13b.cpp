@@ -1,20 +1,21 @@
-#include <cctype>
 #include <algorithm>
+#include <cassert>
+#include <cctype>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <vector>
 #include <unordered_map>
-#include <cassert>
+#include <vector>
 
-std::vector<std::pair<long long, long long>> ParseBusFrequencies (const std::string& all_bus_f) {
-  std::vector<std::pair<long long, long long>> freqs_is; // frequency, index
+std::vector<std::pair<long long, long long>> ParseBusFrequencies(
+    const std::string& all_bus_f) {
+  std::vector<std::pair<long long, long long>> freqs_is;  // frequency, index
   long long begin = 0;
   long long end = all_bus_f.find(",", begin);
   long long index = 0;
-  while(end != std::string::npos) {
+  while (end != std::string::npos) {
     const std::string bus_f = all_bus_f.substr(begin, end - begin);
-    if(bus_f.find_first_not_of("1234567890") == std::string::npos) {
+    if (bus_f.find_first_not_of("1234567890") == std::string::npos) {
       freqs_is.push_back({stoi(bus_f), stoi(bus_f) - index});
     }
     ++index;
@@ -22,14 +23,14 @@ std::vector<std::pair<long long, long long>> ParseBusFrequencies (const std::str
     end = all_bus_f.find(",", begin);
   }
   const std::string bus_f = all_bus_f.substr(begin, end - begin);
-  if(bus_f.find_first_not_of("1234567890") == std::string::npos) {
+  if (bus_f.find_first_not_of("1234567890") == std::string::npos) {
     freqs_is.push_back({stoi(bus_f), stoi(bus_f) - index});
   }
   return freqs_is;
 }
 
-long long findGCD (const long long a, const long long b) {
-  if(a == 0) {
+long long findGCD(const long long a, const long long b) {
+  if (a == 0) {
     return b;
   } else {
     return findGCD(b % a, a);
@@ -38,8 +39,8 @@ long long findGCD (const long long a, const long long b) {
 
 bool checkArrayCoPrime(const std::vector<std::pair<long long, long long>>& v) {
   long long prod = 1;
-  for(const auto [ele, ign] : v) { // element, ignore_element
-    if(findGCD(ele, prod) != 1) {
+  for (const auto [ele, ign] : v) {  // element, ignore_element
+    if (findGCD(ele, prod) != 1) {
       return false;
     }
     prod *= ele;
@@ -48,16 +49,17 @@ bool checkArrayCoPrime(const std::vector<std::pair<long long, long long>>& v) {
 }
 
 // Euclid extended algorithms
-std::tuple<long long, long long, long long> extendedGCD(const long long a, const long long b) {
-	if(a == 0) {
-		return {b, 0, 1};
-	}
-	const auto [gcd, prev_x, prev_y] = extendedGCD(b%a, a);
-	return {gcd, prev_y - ((b/a) * prev_x) , prev_x};
+std::tuple<long long, long long, long long> extendedGCD(const long long a,
+                                                        const long long b) {
+  if (a == 0) {
+    return {b, 0, 1};
+  }
+  const auto [gcd, prev_x, prev_y] = extendedGCD(b % a, a);
+  return {gcd, prev_y - ((b / a) * prev_x), prev_x};
 }
 
 long long modInverse(const long long a, const long long m) {
-  const auto[gcd, x, y] = extendedGCD(a, m);
+  const auto [gcd, x, y] = extendedGCD(a, m);
   if (gcd == 1) {
     return (x % m + m) % m;
   } else {
@@ -65,38 +67,39 @@ long long modInverse(const long long a, const long long m) {
   }
 }
 
-
-long long ChineseRemainderTheorem (const std::vector<std::pair<long long, long long>> divs_rems) { // vector of <divisors, remainders>
+long long ChineseRemainderTheorem(
+    const std::vector<std::pair<long long, long long>>
+        divs_rems) {  // vector of <divisors, remainders>
   // calculate product
   long long prod = 1;
-  for(const auto [div, rem] : divs_rems) {
+  for (const auto [div, rem] : divs_rems) {
     prod *= div;
   }
 
   long long result = 0;
   for (const auto [div, rem] : divs_rems) {
-    const long long prodbyd = prod / div; // prduct divided by div
+    const long long prodbyd = prod / div;  // prduct divided by div
     const auto [gcd, x, y] = extendedGCD(prodbyd, div);
     result = (prod + result + (rem * prodbyd * x)) % prod;
   }
   return result;
 }
 
-
 int main() {
   std::ifstream file{"../input/day_13_input"};
 
-  long long arrive_abs; // attive at bus stop
+  long long arrive_abs;  // attive at bus stop
   file >> arrive_abs;
 
-  std::string all_bus_f; // all buses frequencies
+  std::string all_bus_f;  // all buses frequencies
   file >> all_bus_f;
 
-  long long earliest_bus; // To be found
-  long long extra_time = arrive_abs; // Ensures > arrive_abs % all_bus_f
-  std::vector<std::pair<long long, long long>> freqs_is = ParseBusFrequencies(all_bus_f); // frequencies, indices
+  long long earliest_bus;             // To be found
+  long long extra_time = arrive_abs;  // Ensures > arrive_abs % all_bus_f
+  std::vector<std::pair<long long, long long>> freqs_is =
+      ParseBusFrequencies(all_bus_f);  // frequencies, indices
 
-  if(!checkArrayCoPrime(freqs_is)) {
+  if (!checkArrayCoPrime(freqs_is)) {
     std::cout << "Frequencies not co prime, use brute force" << '\n';
     return -1;
   }

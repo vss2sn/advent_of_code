@@ -11,9 +11,11 @@ int main() {
   std::string pwd;
   int low, high;
   int count = 0;
-  while(file >> low >> dash >> high >> letter >> colon >> pwd) {
-    const int reps = std::count_if(std::begin(pwd), std::end(pwd), [=](const auto ele) { return ele == letter; } );
-    if(low <= reps && reps <= high) {
+  while (file >> low >> dash >> high >> letter >> colon >> pwd) {
+    const int reps =
+        std::count_if(std::begin(pwd), std::end(pwd),
+                      [=](const auto ele) { return ele == letter; });
+    if (low <= reps && reps <= high) {
       ++count;
     }
   }

@@ -1,28 +1,30 @@
 #include <algorithm>
+#include <cassert>
+#include <fstream>
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
-#include <fstream>
-#include <cassert>
 
 constexpr int n_cups = 1000000;
 constexpr int n_rounds = 10000000;
-int main () {
+int main() {
   std::fstream file{"../input/day_23_input"};
   std::string input;
   std::vector<int> order(n_cups + 1);
   std::vector<int> input_v;
   std::getline(file, input);
-  input.erase(std::remove_if(std::begin(input), std::end(input), [](const char c) {return !isprint(c);}), std::end(input));
-  for(int i = 0; i < input.size(); i++) {
+  input.erase(std::remove_if(std::begin(input), std::end(input),
+                             [](const char c) { return !isprint(c); }),
+              std::end(input));
+  for (int i = 0; i < input.size(); i++) {
     input_v.push_back(input[i] - '0');
   }
 
-  for(int i = 0; i < input_v.size() - 1; i++) {
-    order[input_v[i]] = input_v[i+1];
+  for (int i = 0; i < input_v.size() - 1; i++) {
+    order[input_v[i]] = input_v[i + 1];
   }
 
-  for(int i = input_v.size() + 1; i < n_cups; i++) {
+  for (int i = input_v.size() + 1; i < n_cups; i++) {
     order[i] = i + 1;
   }
   order[input_v[input_v.size() - 1]] = input_v.size() + 1;
@@ -41,16 +43,18 @@ int main () {
     }
     order[cur_val] = order[cups_picked_up.back()];
     int to_find = cur_val - 1;
-    if(to_find < low) {
+    if (to_find < low) {
       to_find = high;
     }
-    auto it = std::find(std::begin(cups_picked_up), std::end(cups_picked_up), to_find);
-    while(it != std::end(cups_picked_up)) {
+    auto it = std::find(std::begin(cups_picked_up), std::end(cups_picked_up),
+                        to_find);
+    while (it != std::end(cups_picked_up)) {
       to_find--;
-      if(to_find < low) {
+      if (to_find < low) {
         to_find = high;
       }
-      it = std::find(std::begin(cups_picked_up), std::end(cups_picked_up), to_find);
+      it = std::find(std::begin(cups_picked_up), std::end(cups_picked_up),
+                     to_find);
     }
     auto temp = order[to_find];
     order[to_find] = cups_picked_up[0];
