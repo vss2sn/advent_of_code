@@ -1,12 +1,13 @@
 #include <algorithm>
 #include <fstream>
+#include <iostream>
 #include <iterator>
 #include <vector>
 
 int main() {
   constexpr int total = 2020;
   std::ifstream file;
-  file.open("../input/day_1_input");
+  file.open("../input/day_01_input");
   int num = 0;
 
   std::vector<int> entries_v{std::istream_iterator<int>{file},
@@ -21,6 +22,7 @@ int main() {
       const int rem =
           total - entries_v[start] - entries_v[mid] - entries_v[end];
       if (rem == 0) {
+        std::cout << entries_v[start] * entries_v[mid] * entries_v[end] << '\n';
         return entries_v[start] * entries_v[mid] * entries_v[end];
       } else if (rem > 0) {
         ++mid;

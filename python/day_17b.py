@@ -68,7 +68,7 @@ def main():
     for _ in range(n_steps):
         bounds = getBounds(cells, n_dims)
         cells = step(cells, n_dims, bounds)
-        print(len(cells))
+    print(len(cells))
 
 
 if __name__ == "__main__":

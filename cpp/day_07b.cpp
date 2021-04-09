@@ -22,7 +22,7 @@ int findTotalBags(
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_7_input");
+  file.open("../input/day_07_input");
   std::unordered_map<std::string, std::vector<std::pair<int, std::string>>>
       contains;
   std::unordered_map<std::string, std::vector<std::string>> can_be_contained_by;

@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_5_input")
+    f = open("../input/day_05_input")
     seat_id = 0
     seats = set()
     for line in f:

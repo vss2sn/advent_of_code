@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_4_input")
+    f = open("../input/day_04_input")
     key_fields = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     n_valid = 0
     n_fields = 0

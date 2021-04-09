@@ -7,7 +7,7 @@
 constexpr int n_preamble = 25;
 
 int main() {
-  std::ifstream file{"../input/day_9_input"};
+  std::ifstream file{"../input/day_09_input"};
   int number;
   std::vector<int> list;
   std::vector<int> preamble_v;
@@ -40,12 +40,9 @@ int main() {
         end--;
       } else if (sum < number) {
         begin++;
-      } else {
-        std::cout << "The two numbers are equal" << '\n';
       }
     }
     if (!found) {
-      std::cout << "Number cannot be created from preamble: " << number << '\n';
       break;
     } else {
       list.push_back(number);
@@ -68,7 +65,7 @@ int main() {
       --begin;
       sum += list[begin];
     } else {
-      std::cout << "contiguous list found" << '\n';
+      // contiguous list found
       break;
     }
   }
@@ -79,6 +76,6 @@ int main() {
                                          std::next(std::begin(list), end));
 
   const int encrytion_weakness = min_cont + max_cont;
-  std::cout << "Encrytion weakness " << encrytion_weakness << '\n';
+  std::cout << encrytion_weakness << '\n';
   return encrytion_weakness;
 }

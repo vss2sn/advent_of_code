@@ -1,11 +1,11 @@
 #include <algorithm>
-// #include <iostream>
 #include <fstream>
+#include <iostream>
 #include <unordered_set>
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_2_input");
+  file.open("../input/day_02_input");
   std::unordered_set<int> entries;
   char dash, letter, colon;
   std::string pwd;
@@ -13,11 +13,10 @@ int main() {
   int count = 0;
   while (file >> i1 >> dash >> i2 >> letter >> colon >> pwd) {
     const bool valid = (pwd[i1 - 1] == letter) ^ (pwd[i2 - 1] == letter);
-    // std::cout << (valid ? "valid" : "invalid") << '\n';
     if (valid) {
       ++count;
     }
   }
-  // std::cout << count << '\n';
+  std::cout << count << '\n';
   return count;
 }

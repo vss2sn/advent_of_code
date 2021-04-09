@@ -6,7 +6,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_6_input");
+  file.open("../input/day_06_input");
 
   int count = 0;
   std::string line;

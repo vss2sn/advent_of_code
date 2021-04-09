@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <cassert>
+// #include <cassert>
 #include <deque>
 #include <fstream>
 #include <functional>
@@ -58,8 +58,8 @@ int main() {
 
   long long encryption_key =
       GenerateEncrytionKey(card_public_key, door_loop_size);
-  assert(encryption_key ==
-         GenerateEncrytionKey(door_public_key, card_loop_size));
+  // assert(encryption_key ==
+  //        GenerateEncrytionKey(door_public_key, card_loop_size));
   std::cout << encryption_key << '\n';
   return encryption_key;
 }

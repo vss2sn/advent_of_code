@@ -1,5 +1,4 @@
 #include <algorithm>
-// #include <cctype>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -8,7 +7,7 @@
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_4_input");
+  file.open("../input/day_04_input");
   std::string text;
   int count = 0;
   int fields = 0;
@@ -62,7 +61,8 @@ int main() {
 
   while (std::getline(file, text)) {
     text.erase(std::remove_if(std::begin(text), std::end(text),
-                              [](char c) { return !std::isprint(c); }));
+                              [](char c) { return !std::isprint(c); }),
+               std::end(text));
     if (text.empty()) {
       if (fields == 7) {
         ++count;

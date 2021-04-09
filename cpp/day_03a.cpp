@@ -1,10 +1,10 @@
 #include <fstream>
-// #include <iostream>
+#include <iostream>
 #include <vector>
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_3_input");
+  file.open("../input/day_03_input");
   std::string row;
   std::vector<std::string> map;
   while (file >> row) {
@@ -26,6 +26,6 @@ int main() {
     position_x %= n_cols;
     position_y += inc_y;
   }
-  // std::cout << n_tree << '\n';
+  std::cout << n_tree << '\n';
   return n_tree;
 }

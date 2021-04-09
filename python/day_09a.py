@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
-list_size = 25
-
 
 def main():
-    f = open("../input/day_9_input")
+    list_size = 25
+    f = open("../input/day_09_input")
     values = list()
     for i in range(0, list_size):
         line = f.readline().strip().replace("\n", "").replace("\r", "")
@@ -12,6 +11,7 @@ def main():
     for line in f:
         new_number = int(line)
         allowed = False
+        # TODO(vss): Optimize
         for i in range(0, list_size):
             if not allowed:
                 for j in range(i, list_size):

@@ -1,12 +1,12 @@
 #include <algorithm>
 #include <fstream>
-// #include <iostream>
+#include <iostream>
 #include <string>
 #include <unordered_set>
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_4_input");
+  file.open("../input/day_04_input");
   std::string text;
   int count = 0;
   int fields = 0;
@@ -14,7 +14,8 @@ int main() {
                                              "hcl", "ecl", "pid"};
   while (std::getline(file, text)) {
     text.erase(std::remove_if(std::begin(text), std::end(text),
-                              [](char c) { return !std::isprint(c); }));
+                              [](char c) { return !std::isprint(c); }),
+               std::end(text));
     if (text.empty()) {
       if (fields == 7) {
         ++count;
@@ -37,6 +38,6 @@ int main() {
   if (fields == 7) {
     ++count;
   }
-  // std::cout << count << '\n';
+  std::cout << count << '\n';
   return count;
 }

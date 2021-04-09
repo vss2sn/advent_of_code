@@ -4,7 +4,7 @@ import re
 
 
 def main():
-    f = open("../input/day_2_input")
+    f = open("../input/day_02_input")
     match_pattern = re.compile(r"(\d+)-(\d+) ([a-z]): (.*)\n")
     count = 0
     for line in f:

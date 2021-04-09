@@ -6,7 +6,7 @@
 #include <vector>
 
 int main() {
-  std::ifstream file{"../input/day_8_input"};
+  std::ifstream file{"../input/day_08_input"};
   std::vector<std::string> code_lines;
   std::string line;
   while (std::getline(file, line)) {
@@ -17,7 +17,6 @@ int main() {
   int line_n = 0;
   int acc = 0;
   while (true) {
-    std::cout << "Instruction #" << line_n << '\n';
     if (executed[line_n]) break;
     const std::string_view inst = code_lines[line_n].substr(0, 3);
     executed[line_n] = true;

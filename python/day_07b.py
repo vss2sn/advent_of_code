@@ -23,7 +23,7 @@ def n_inner_bags(contains, colour):
 
 
 def main():
-    f = open("../input/day_7_input")
+    f = open("../input/day_07_input")
     contains = dict()
     for line in f:
         line = line.strip().replace("\n", "").replace("\r", "")

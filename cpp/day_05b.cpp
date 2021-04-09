@@ -36,7 +36,7 @@ int convertSeatBSPToSeatID(const std::string& seat_bsp) {
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_5_input");
+  file.open("../input/day_05_input");
   std::array<int, 1024> seat_ids;
   for (int i = 0; i < 1023; ++i) {
     seat_ids[i] = i;

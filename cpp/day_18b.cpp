@@ -103,7 +103,6 @@ long long calcExpressionValueAdvanced(std::deque<std::string>& expr) {
   std::string finalOperand = expr.front();
   simplifiedEquation.push_back(finalOperand);
   expr.pop_front();
-  std::cout << "Hello" << '\n';
   // Finally solve the remaining multiplication using our original
   // solveEquation()
   return calcExpressionValue(simplifiedEquation);
@@ -117,7 +116,6 @@ int main() {
     line.erase(std::remove_if(std::begin(line), std::end(line),
                               [](auto c) { return !isprint(c) || c == ' '; }),
                std::end(line));
-    std::cout << line << '\n';
     auto d_line = convertStringToDeque(line);
     sum += calcExpressionValueAdvanced(d_line);
   }

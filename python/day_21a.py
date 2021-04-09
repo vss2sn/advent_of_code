@@ -13,8 +13,6 @@ def main():
         ingredients = ingredients.split(" ")
         ingredients.remove("")
         allergens = allergens.split(" ")
-        # print(ingredients)
-        # print(allergens)
         for allergen in allergens:
             if allergen in atoi:
                 subset = list()
