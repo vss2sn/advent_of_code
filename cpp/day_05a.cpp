@@ -35,7 +35,7 @@ int convertSeatBSPToSeatID(const std::string& seat_bsp) {
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_5_input");
+  file.open("../input/day_05_input");
 
   std::string seat_bsp;
   int high_seat = 0;

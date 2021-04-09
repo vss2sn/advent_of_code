@@ -1,10 +1,10 @@
 #include <fstream>
-// #include <iostream>
+#include <iostream>
 #include <vector>
 
 int main() {
   std::ifstream file;
-  file.open("../input/day_3_input");
+  file.open("../input/day_03_input");
   std::string row;
   std::vector<std::string> map;
   std::vector<std::string> slopes = {{1, 1}, {3, 1}, {5, 1}, {7, 1}, {1, 2}};
@@ -30,9 +30,8 @@ int main() {
       position_x %= n_cols;
       position_y += inc_y;
     }
-    // std::cout << n_tree << '\n';
     product *= n_tree;
   }
-  // std::cout << product << '\n';
+  std::cout << product << '\n';
   return product;
 }

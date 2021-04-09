@@ -9,7 +9,6 @@ def parseInputAndCreateCells(file_name, n_dims):
     raw_data = f.readlines()
     cells = set()
     for y, line in enumerate(raw_data):
-        # line = line.strip().replace('\r', '').replace('\n', '')
         for x, cell_val in enumerate(line):
             if cell_val == "#":
                 cells.add((x, y) + (0,) * (n_dims - 2))
@@ -68,7 +67,8 @@ def main():
     for _ in range(n_steps):
         bounds = getBounds(cells, n_dims)
         cells = step(cells, n_dims, bounds)
-        print(len(cells))
+    print(len(cells))
+    return len(cells)
 
 
 if __name__ == "__main__":

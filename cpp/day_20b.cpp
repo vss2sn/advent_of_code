@@ -63,7 +63,7 @@ struct Tile {
       }
       image = new_image;
     }
-    for (int i = 0; i < rotation; i++) {
+    for (int r = 0; r < rotation; r++) {
       auto new_image = image;
       for (int i = 0; i < image.size(); i++) {
         for (int j = 0; j < image[i].size(); j++) {

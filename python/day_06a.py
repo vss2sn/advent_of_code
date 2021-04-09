@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_6_input")
+    f = open("../input/day_06_input")
     count = 0
     answers = set()
     for line in f:

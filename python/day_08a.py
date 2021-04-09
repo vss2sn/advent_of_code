@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_8_input")
+    f = open("../input/day_08_input")
     lines = [line.strip().replace("\n", "").replace("\r", "") for line in f]
     n_lines = len(lines)
     execed_list = [False] * n_lines

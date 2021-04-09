@@ -2,11 +2,10 @@
 
 import copy
 
-list_size = 25
-
 
 def main():
-    f = open("../input/day_9_input")
+    list_size = 25
+    f = open("../input/day_09_input")
     values = list()
     all_values = list()
     new_number = 0
@@ -14,9 +13,9 @@ def main():
         line = f.readline().strip().replace("\n", "").replace("\r", "")
         values.append(int(line))
     for line in f:
-        line = f.readline().strip().replace("\n", "").replace("\r", "")
         new_number = int(line)
         allowed = False
+        # TODO(vss): Optimize
         for i in range(0, list_size):
             if not allowed:
                 for j in range(i, list_size):
@@ -29,12 +28,10 @@ def main():
             all_values.append(new_number)
         else:
             break
-    print("{} does not conform to the pattern".format(new_number))
     start = 0
     end = 0
     list_sum = all_values[start]
     while end < len(all_values) - 1:
-        print(list_sum)
         if list_sum == new_number:
             subset = all_values[start:end]
             print(min(subset) + max(subset))
@@ -45,8 +42,6 @@ def main():
         elif list_sum < new_number:
             end += 1
             list_sum += all_values[end]
-        else:
-            print("WTH")
     return 0
 
 

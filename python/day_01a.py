@@ -3,7 +3,7 @@
 
 def main():
     total = 2020
-    f = open("../input/day_1_input")
+    f = open("../input/day_01_input")
     numbers = set()
     for line in f:
         line = line.strip().replace("\n", "").replace("\r", "")

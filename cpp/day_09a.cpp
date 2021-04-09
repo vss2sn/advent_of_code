@@ -7,7 +7,7 @@
 constexpr int n_preamble = 25;
 
 int main() {
-  std::ifstream file{"../input/day_9_input"};
+  std::ifstream file{"../input/day_09_input"};
   int number;
   std::vector<int> preamble_v;
   std::queue<int> preamble_q;
@@ -38,13 +38,12 @@ int main() {
         end--;
       } else if (sum < number) {
         begin++;
-      } else {
-        std::cout << "The two numbers are equal" << '\n';
       }
     }
     if (!found) {
-      std::cout << "Number cannot be created from preamble: " << number << '\n';
-      break;
+      std::cout << number << '\n';
+      return number;
     }
   }
+  return -1;
 }

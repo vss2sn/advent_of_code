@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_5_input")
+    f = open("../input/day_05_input")
     max_seat_id = 0
     for line in f:
         min_row = 0

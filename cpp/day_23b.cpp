@@ -62,8 +62,6 @@ int main() {
     round++;
     cur_val = order[cur_val];
   }
-
-  std::cout << order[1] << ' ' << order[order[1]] << '\n';
   long long product = (long long)order[1] * (long long)order[order[1]];
   std::cout << product << '\n';
   return 0;

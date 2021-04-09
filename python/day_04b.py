@@ -2,7 +2,7 @@
 
 
 def main():
-    f = open("../input/day_4_input")
+    f = open("../input/day_04_input")
     key_fields = {"byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"}
     eye_colours = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}
     rules = {

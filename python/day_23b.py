@@ -48,8 +48,6 @@ def main():
             val = order[val]
         order[val] = temp
         current_cup = order[current_cup]
-    print(order[1])
-    print(order[order[1]])
     ans = order[1] * order[order[1]]
     print(ans)
     return ans

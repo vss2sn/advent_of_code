@@ -37,8 +37,6 @@ int main() {
 
   // Difference between last adapter and device
   ++n_del_3;
-  std::cout << "Product of number of adapter pairs with 1 jolt differences "
-               "with the number of adapter pairs with 3 jolt differences: "
-            << n_del_1 * n_del_3 << '\n';
+  std::cout << n_del_1 * n_del_3 << '\n';
   return n_del_1 * n_del_3;
 }

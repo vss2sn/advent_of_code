@@ -16,7 +16,7 @@ def countTreesInPath(forest, step_x, step_y):
 
 
 def main():
-    f = open("../input/day_3_input")
+    f = open("../input/day_03_input")
     forest = [line.strip() for line in f.readlines()]
     print(
         countTreesInPath(forest, 1, 1)
