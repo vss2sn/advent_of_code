@@ -1,4 +1,4 @@
-*/a.out
-*/temp.*
-python/*.pyc
+a.out
+temp*
+*.pyc
 *.sh
