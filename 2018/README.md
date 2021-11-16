@@ -4,8 +4,6 @@ This folder contains solutions to each of the problems in Advent of Code 2018 in
 
 #### Notes ####
 * There are multiple sample puzzle inputs for some days. Modify the sample input file appropriately before using it.
-* These solution contain the C++ solution for all the days, but only the solutions for days 1-7 in Python.
-* Some of the days do not have sample inputs.
 
 |Puzzle|C++ Solutions|Python Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -17,7 +15,7 @@ This folder contains solutions to each of the problems in Advent of Code 2018 in
 | <nobr> [Day 6: Chronal Coordinates](https://adventofcode.com/2018/day/6) </nobr> | <nobr> [Part 1](/2018/cpp/day_06a.cpp) [Part 2](/2018/cpp/day_06b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_06a.py) [Part 2](/2018/python/day_06b.py) </nobr> |[Link](/2018/input/day_06_input)|[Link](/2018/sample_input/day_06_sample_input)|[Link](/2018/puzzles/day_06_puzzle)|
 | <nobr> [Day 7: The Sum of Its Parts](https://adventofcode.com/2018/day/7) </nobr> | <nobr> [Part 1](/2018/cpp/day_07a.cpp) [Part 2](/2018/cpp/day_07b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_07a.py) [Part 2](/2018/python/day_07b.py) </nobr> |[Link](/2018/input/day_07_input)|[Link](/2018/sample_input/day_07_sample_input)|[Link](/2018/puzzles/day_07_puzzle)|
 | <nobr> [Day 8: Day 8: Memory Maneuver](https://adventofcode.com/2018/day/8) </nobr> | <nobr> [Part 1](/2018/cpp/day_08a.cpp) [Part 2](/2018/cpp/day_08b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_08a.py) [Part 2](/2018/python/day_08b.py) </nobr> |[Link](/2018/input/day_08_input)|[Link](/2018/sample_input/day_08_sample_input)|[Link](/2018/puzzles/day_08_puzzle)|
-| <nobr> [Day 9: ](https://adventofcode.com/2018/day/9) </nobr> | <nobr> [Part 1](/2018/cpp/day_09a.cpp) [Part 2](/2018/cpp/day_09b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_09a.py) [Part 2](/2018/python/day_09b.py) </nobr> |[Link](/2018/input/day_09_input)|[Link](/2018/sample_input/day_09_sample_input)|[Link](/2018/puzzles/day_09_puzzle)|
+| <nobr> [Day 9: Marble Mania](https://adventofcode.com/2018/day/9) </nobr> | <nobr> [Part 1](/2018/cpp/day_09a.cpp) [Part 2](/2018/cpp/day_09b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_09a.py) [Part 2](/2018/python/day_09b.py) </nobr> |[Link](/2018/input/day_09_input)|[Link](/2018/sample_input/day_09_sample_input)|[Link](/2018/puzzles/day_09_puzzle)|
 | <nobr> [Day 10: ](https://adventofcode.com/2018/day/10) </nobr> | <nobr> [Part 1](/2018/cpp/day_10a.cpp) [Part 2](/2018/cpp/day_10b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_10a.py) [Part 2](/2018/python/day_10b.py) </nobr> |[Link](/2018/input/day_10_input)|[Link](/2018/sample_input/day_10_sample_input)|[Link](/2018/puzzles/day_10_puzzle)|
 | <nobr> [Day 11: ](https://adventofcode.com/2018/day/11) </nobr> | <nobr> [Part 1](/2018/cpp/day_11a.cpp) [Part 2](/2018/cpp/day_11b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_11a.py) [Part 2](/2018/python/day_11b.py) </nobr> |[Link](/2018/input/day_11_input)|[Link](/2018/sample_input/day_11_sample_input)|[Link](/2018/puzzles/day_11_puzzle)|
 | <nobr> [Day 12: ](https://adventofcode.com/2018/day/12) </nobr> | <nobr> [Part 1](/2018/cpp/day_12a.cpp) [Part 2](/2018/cpp/day_12b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_12a.py) [Part 2](/2018/python/day_12b.py) </nobr> |[Link](/2018/input/day_12_input)|[Link](/2018/sample_input/day_12_sample_input)|[Link](/2018/puzzles/day_12_puzzle)|
