@@ -1,9 +1,10 @@
 ## Advent of Code 2018 ##
 
-This folder contains solutions to each of the problems in Advent of Code 2018 in both C++ and Python.
+This folder contains solutions to each of the problems in Advent of Code 2018 in C++.
 
 #### Notes ####
 * There are multiple sample puzzle inputs for some days. Modify the sample input file appropriately before using it.
+* The links for Python do not work and are placeholders.
 
 |Puzzle|C++ Solutions|Python Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|:---:|
@@ -21,7 +22,7 @@ This folder contains solutions to each of the problems in Advent of Code 2018 in
 | <nobr> [Day 12: Subterranean Sustainability](https://adventofcode.com/2018/day/12) </nobr> | <nobr> [Part 1](/2018/cpp/day_12a.cpp) [Part 2](/2018/cpp/day_12b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_12a.py) [Part 2](/2018/python/day_12b.py) </nobr> |[Link](/2018/input/day_12_input)|[Link](/2018/sample_input/day_12_sample_input)|[Link](/2018/puzzles/day_12_puzzle)|
 | <nobr> [Day 13: Mine Cart Madness](https://adventofcode.com/2018/day/13) </nobr> | <nobr> [Part 1](/2018/cpp/day_13a.cpp) [Part 2](/2018/cpp/day_13b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_13a.py) [Part 2](/2018/python/day_13b.py) </nobr> |[Link](/2018/input/day_13_input)|[Link](/2018/sample_input/day_13_sample_input)|[Link](/2018/puzzles/day_13_puzzle)|
 | <nobr> [Day 14: Chocolate Charts](https://adventofcode.com/2018/day/14) </nobr> | <nobr> [Part 1](/2018/cpp/day_14a.cpp) [Part 2](/2018/cpp/day_14b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_14a.py) [Part 2](/2018/python/day_14b.py) </nobr> |[Link](/2018/input/day_14_input)|[Link](/2018/sample_input/day_14_sample_input)|[Link](/2018/puzzles/day_14_puzzle)|
-| <nobr> [Day 15: ](https://adventofcode.com/2018/day/15) </nobr> | <nobr> [Part 1](/2018/cpp/day_15a.cpp) [Part 2](/2018/cpp/day_15b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_15a.py) [Part 2](/2018/python/day_15b.py) </nobr> |[Link](/2018/input/day_15_input)|[Link](/2018/sample_input/day_15_sample_input)|[Link](/2018/puzzles/day_15_puzzle)|
+| <nobr> [Day 15: Beverage Bandits](https://adventofcode.com/2018/day/15) </nobr> | <nobr> [Part 1](/2018/cpp/day_15a.cpp) [Part 2](/2018/cpp/day_15b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_15a.py) [Part 2](/2018/python/day_15b.py) </nobr> |[Link](/2018/input/day_15_input)|[Link](/2018/sample_input/day_15_sample_input)|[Link](/2018/puzzles/day_15_puzzle)|
 | <nobr> [Day 16: ](https://adventofcode.com/2018/day/16) </nobr> | <nobr> [Part 1](/2018/cpp/day_16a.cpp) [Part 2](/2018/cpp/day_16b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_16a.py) [Part 2](/2018/python/day_16b.py) </nobr> |[Link](/2018/input/day_16_input)|[Link](/2018/sample_input/day_16_sample_input)|[Link](/2018/puzzles/day_16_puzzle)|
 | <nobr> [Day 17: ](https://adventofcode.com/2018/day/17) </nobr> | <nobr> [Part 1](/2018/cpp/day_17a.cpp) [Part 2](/2018/cpp/day_17b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_17a.py) [Part 2](/2018/python/day_17b.py) </nobr> |[Link](/2018/input/day_17_input)|[Link](/2018/sample_input/day_17_sample_input)|[Link](/2018/puzzles/day_17_puzzle)|
 | <nobr> [Day 18: ](https://adventofcode.com/2018/day/18) </nobr> | <nobr> [Part 1](/2018/cpp/day_18a.cpp) [Part 2](/2018/cpp/day_18b.cpp) </nobr> | <nobr> [Part 1](/2018/python/day_18a.py) [Part 2](/2018/python/day_18b.py) </nobr> |[Link](/2018/input/day_18_input)|[Link](/2018/sample_input/day_18_sample_input)|[Link](/2018/puzzles/day_18_puzzle)|
