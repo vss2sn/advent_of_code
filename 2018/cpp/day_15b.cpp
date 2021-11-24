@@ -49,7 +49,10 @@ std::ostream& operator << (std::ostream& os, const Point& p) {
 
 struct point_hash {
   std::size_t operator () (const Point& p) const {
-    return p.row ^ p.col;
+     // Both work well too, ideally when grid
+     // can use number of rows and get id of point
+    // return p.row * p.col;
+    return (p.row << 4) + p.col;
   }
 };
 
@@ -62,26 +65,26 @@ struct Unit {
     type(type), hp(hp), ap(ap){}
 };
 
-inline void add_keys_to_vec(std::vector<Point> & v, const std::unordered_map<Point, std::unique_ptr<Unit>, point_hash>& m) {
+inline void add_keys_to_vec(std::vector<Point> & v, const std::unordered_map<Point, Unit, point_hash>& m) {
+  // std::transform(m.begin(), m.end(), std::back_inserter(v), [](const auto& p) { return p.first; })
+  // std::copy (bar.begin(),bar.end(),back_inserter(foo));
   for (const auto& i : m) {
     v.push_back(i.first);
   }
 };
 
 std::vector<Point> get_attack_positions(const Point& p) {
-  const std::vector<Point> delta = {
+  return {
     // In reading order
-    Point(-1,0),
-    Point(0,-1),
-    Point(0,1),
-    Point(1,0)
+    Point(p.row - 1, p.col),
+    Point(p.row, p.col - 1),
+    Point(p.row, p.col + 1),
+    Point(p.row + 1, p.col)
+    // Point(-1,0),
+    // Point(0,-1),
+    // Point(0,1),
+    // Point(1,0)
   };
-
-  std::vector<Point> att_pos;
-  for (const auto& d : delta) {
-    att_pos.emplace_back(p.row + d.row, p.col + d.col);
-  }
-  return att_pos;
 }
 
 std::tuple<bool, int, std::vector<Point>> dfs (const Point& p, const Point& ap, int max_cost, const std::vector<std::vector<char>>& map) {
@@ -91,7 +94,7 @@ std::tuple<bool, int, std::vector<Point>> dfs (const Point& p, const Point& ap, 
   q.push({p, 0});
   while(!q.empty()) {
     Point cp = q.front().first;
-    int cc = q.front().second;
+    const int cc = q.front().second;
     q.pop();
     if (cp == ap) {
       while(cp != p) {
@@ -115,7 +118,6 @@ std::tuple<bool, int, std::vector<Point>> dfs (const Point& p, const Point& ap, 
 
 bool compare_paths(const std::vector<Point>& path1, const std::vector<Point>& path2) {
   int index = 0;
-  // This should never happen as the cost is the same when this is called
   if (path1.size() != path2.size()) {
     return path1.size() < path2.size();
   }
@@ -148,7 +150,7 @@ std::tuple<bool, Point> get_next_move (const Point& p, const std::vector<std::ve
 }
 
 void printGrid(const std::vector<std::vector<char>>& map,
-  const std::unordered_map<Point, std::unique_ptr<Unit>, point_hash>& units) {
+  const std::unordered_map<Point, Unit, point_hash>& units) {
   for (int row = 0; row < map.size(); row++ ) {
     for (int col = 0; col < map[row].size(); col++) {
       std::cout << map[row][col];
@@ -164,27 +166,30 @@ int main(int argc, char * argv[]) {
     input = argv[1];
   }
 
+  std::fstream file(input);
+  std::string line;
+  std::vector<std::vector<char>> main_map;
+
+  while(std::getline(file, line)) {
+    main_map.emplace_back();
+    for (const char c : line) {
+      main_map.back().emplace_back(c);
+    }
+  }
 
   bool elves_win = false;
   int elf_ap = 3;
   while (!elves_win) {
     elf_ap++;
-    std::fstream file(input);
-    std::string line;
-    std::vector<std::vector<char>> map;
-    std::unordered_map<Point, std::unique_ptr<Unit>, point_hash> units;
-
-    while(std::getline(file, line)) {
-      map.emplace_back();
-      for (const char c : line) {
-        map.back().emplace_back(c);
-        if (c == 'E') {
-          const auto coord = Point(map.size() - 1, map.back().size() - 1);
-          units.insert({coord, std::make_unique<Unit>(UnitType::ELF, 200, elf_ap)});
-        }
-        else if (c == 'G') {
-          const auto coord = Point(map.size() - 1, map.back().size() - 1);
-          units.insert({coord, std::make_unique<Unit>(UnitType::GOBLIN, 200, 3)});
+    auto map = main_map;
+    std::unordered_map<Point, Unit, point_hash> units;
+    for (int row = 0; row < map.size(); row++) {
+      for (int col = 0; col < map[row].size(); col++) {
+        const auto coord = Point(row, col);
+        if (map[row][col] == 'E') {
+          units.insert({coord, Unit(UnitType::ELF, 200, elf_ap)});
+        } else if (map[row][col] == 'G') {
+          units.insert({coord, Unit(UnitType::GOBLIN, 200, 3)});
         }
       }
     }
@@ -200,8 +205,12 @@ int main(int argc, char * argv[]) {
       round_ends_midway = false;
       moved_or_attacked = false;
       n_unit_types.clear();
+
+      n_unit_types.insert(std::begin(units)->second.type);
       for (const auto& unit : units) {
-        n_unit_types.insert(unit.second->type);
+        if (const auto it = n_unit_types.insert(unit.second.type); it.second)  {
+          break;
+        }
       }
       if (n_unit_types.size() == 1) {
         break;
@@ -210,12 +219,15 @@ int main(int argc, char * argv[]) {
       add_keys_to_vec(occupied, units);
       std:sort(std::begin(occupied), std::end(occupied));
       step++;
-
+      // std::cout << step << '\n';
       for (int pos_i = 0; pos_i < occupied.size(); pos_i++) {
 
         n_unit_types.clear();
+        n_unit_types.insert(std::begin(units)->second.type);
         for (const auto& unit : units) {
-          n_unit_types.insert(unit.second->type);
+          if (const auto it = n_unit_types.insert(unit.second.type); it.second)  {
+            break;
+          }
         }
         if (n_unit_types.size() == 1) {
           round_ends_midway = true;
@@ -229,19 +241,20 @@ int main(int argc, char * argv[]) {
         // Move
         bool need_to_move = true;
         for(const auto& n : get_attack_positions(position)) {
-          if (units.find(n) != units.end() && units[n]->type != units[occupied[pos_i]]->type) {
+          if (units.find(n) != units.end() &&
+              units.find(occupied[pos_i]) != units.end() &&
+              units.find(n)->second.type != units.find(occupied[pos_i])->second.type) {
             need_to_move = false;
             break;
           }
         }
 
         if (need_to_move) {
-          auto unit = std::move(units[occupied[pos_i]]);
-
+          const auto unit = units.find(occupied[pos_i])->second;
           units.erase(occupied[pos_i]);
           for (const auto& p : units) {
-            if (p.second->type != unit->type) {
-              for (const auto ap : get_attack_positions(p.first)) {
+            if (p.second.type != unit.type) {
+              for (const auto& ap : get_attack_positions(p.first)) {
                 att_pos.push_back(ap);
               }
             }
@@ -251,30 +264,32 @@ int main(int argc, char * argv[]) {
             map[position.row][position.col] = '.';
             position = new_position;
             moved_or_attacked = true;
-            if (unit->type == UnitType::ELF) {
+            if (unit.type == UnitType::ELF) {
               map[position.row][position.col] = 'E';
-            } else if (unit->type == UnitType::GOBLIN) {
+            } else if (unit.type == UnitType::GOBLIN) {
               map[position.row][position.col] = 'G';
             }
           }
-          units[position] = std::move(unit);
+          units.insert({position, unit});
         }
 
         // Attack
         std::vector<Point> opponent_positions;
         for(const auto& n : get_attack_positions(position)) {
-          if (auto it = units.find(n); it != units.end() && it->second->type != units[position]->type) {
+          if (units.find(n) != units.end() &&
+              units.find(position) != units.end() &&
+              units.find(n)->second.type != units.find(position)->second.type) {
             opponent_positions.push_back(n);
           }
         }
         if (opponent_positions.size() > 0) {
           auto p = *std::min_element(std::begin(opponent_positions), std::end(opponent_positions),
-          [&units](const Point& p1, const Point& p2) { return units[p1]->hp < units[p2]->hp; } );
-          units[p]->hp -= units[position]->ap;
+                   [&units](const Point& p1, const Point& p2) { return units.find(p1)->second.hp < units.find(p2)->second.hp; } );
+          units.find(p)->second.hp -= units.find(position)->second.ap;
           moved_or_attacked = true;
 
-          if (units[p]->hp <= 0) {
-            if (units[p]->type == UnitType::ELF) {
+          if (units.find(p)->second.hp <= 0) {
+            if (units.find(p)->second.type == UnitType::ELF) {
               no_elf_killed = false;
               break;
             }
@@ -289,7 +304,7 @@ int main(int argc, char * argv[]) {
     if (*std::begin(n_unit_types) == UnitType::ELF && no_elf_killed) {
       std::cout << "Elf ap: " << elf_ap << '\n';
       auto sum_hp = std::accumulate(std::begin(units), std::end(units), 0,
-        [](int total_hp, const auto& p) { return total_hp + p.second->hp; });
+        [](int total_hp, const auto& p) { return total_hp + p.second.hp; });
       std::cout << sum_hp << ' ' << step << ' ' << sum_hp * step << '\n';
       break;
     }

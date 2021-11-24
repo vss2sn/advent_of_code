@@ -115,7 +115,6 @@ std::tuple<bool, int, std::vector<Point>> dfs (const Point& p, const Point& ap, 
 
 bool compare_paths(const std::vector<Point>& path1, const std::vector<Point>& path2) {
   int index = 0;
-  // This should never happen as the cost is the same when this is called
   if (path1.size() != path2.size()) {
     return path1.size() < path2.size();
   }
