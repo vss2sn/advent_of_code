@@ -2,6 +2,9 @@
 
 This folder contains solutions to each of the problems in Advent of Code 2021 in C++.
 
+#### Note ####
+The sample puzzles for some days (eg 12) multiple sample inputs. Edit the file before using it.
+
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
 | <nobr> [Day 1: Sonar Sweep](https://adventofcode.com/2021/day/1) </nobr> | <nobr> [Part 1](/2021/cpp/day_01a.cpp) [Part 2](/2021/cpp/day_01b.cpp) </nobr> | </nobr> [Link](/2021/input/day_01_input) </nobr> | </nobr> [Link](/2021/sample_input/day_01_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_01_puzzle) </nobr> |
@@ -15,3 +18,4 @@ This folder contains solutions to each of the problems in Advent of Code 2021 in
 | <nobr> [Day 9: Smoke Basin](https://adventofcode.com/2021/day/9) </nobr> | <nobr> [Part 1](/2021/cpp/day_09a.cpp) [Part 2](/2021/cpp/day_09b.cpp) </nobr> | </nobr> [Link](/2021/input/day_09_input) </nobr> | </nobr> [Link](/2021/sample_input/day_09_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_09_puzzle) </nobr> |
 | <nobr> [Day 10: Syntax Scoring](https://adventofcode.com/2021/day/10) </nobr> | <nobr> [Part 1](/2021/cpp/day_10a.cpp) [Part 2](/2021/cpp/day_10b.cpp) </nobr> | </nobr> [Link](/2021/input/day_10_input) </nobr> | </nobr> [Link](/2021/sample_input/day_10_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_10_puzzle) </nobr> |
 | <nobr> [Day 11: Dumbo Octopus](https://adventofcode.com/2021/day/11) </nobr> | <nobr> [Part 1](/2021/cpp/day_11a.cpp) [Part 2](/2021/cpp/day_11b.cpp) </nobr> | </nobr> [Link](/2021/input/day_11_input) </nobr> | </nobr> [Link](/2021/sample_input/day_11_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_11_puzzle) </nobr> |
+| <nobr> [Day 12: Passage Pathing](https://adventofcode.com/2021/day/12) </nobr> | <nobr> [Part 1](/2021/cpp/day_12a.cpp) [Part 2](/2021/cpp/day_12b.cpp) </nobr> | </nobr> [Link](/2021/input/day_12_input) </nobr> | </nobr> [Link](/2021/sample_input/day_12_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_12_puzzle) </nobr> |
