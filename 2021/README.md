@@ -3,7 +3,7 @@
 This folder contains solutions to each of the problems in Advent of Code 2021 in C++.
 
 #### Note ####
-The sample puzzles for some days (eg 12) multiple sample inputs. Edit the file before using it.
+The sample puzzles for some days (eg 12, 16) multiple sample inputs. Edit the file before using it.
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -22,3 +22,4 @@ The sample puzzles for some days (eg 12) multiple sample inputs. Edit the file b
 | <nobr> [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13) </nobr> | <nobr> [Part 1](/2021/cpp/day_13a.cpp) [Part 2](/2021/cpp/day_13b.cpp) </nobr> | </nobr> [Link](/2021/input/day_13_input) </nobr> | </nobr> [Link](/2021/sample_input/day_13_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_13_puzzle) </nobr> |
 | <nobr> [Day 14: Extended Polymerization](https://adventofcode.com/2021/day/14) </nobr> | <nobr> [Part 1](/2021/cpp/day_14a.cpp) [Part 2](/2021/cpp/day_14b.cpp) </nobr> | </nobr> [Link](/2021/input/day_14_input) </nobr> | </nobr> [Link](/2021/sample_input/day_14_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_14_puzzle) </nobr> |
 | <nobr> [Day 15: Chiton](https://adventofcode.com/2021/day/15) </nobr> | <nobr> [Part 1](/2021/cpp/day_15a.cpp) [Part 2](/2021/cpp/day_15b.cpp) </nobr> | </nobr> [Link](/2021/input/day_15_input) </nobr> | </nobr> [Link](/2021/sample_input/day_15_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_15_puzzle) </nobr> |
+| <nobr> [Day 16: Packet Decoder](https://adventofcode.com/2021/day/16) </nobr> | <nobr> [Part 1](/2021/cpp/day_16a.cpp) [Part 2](/2021/cpp/day_16b.cpp) </nobr> | </nobr> [Link](/2021/input/day_16_input) </nobr> | </nobr> [Link](/2021/sample_input/day_16_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_16_puzzle) </nobr> |
