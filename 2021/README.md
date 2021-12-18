@@ -3,7 +3,9 @@
 This folder contains solutions to each of the problems in Advent of Code 2021 in C++.
 
 #### Note ####
-The sample puzzles for some days (eg 12, 16) multiple sample inputs. Edit the file before using it.
+- The sample puzzles for some days (eg 12, 16) multiple sample inputs. Edit the file before using it.
+- For simplicity the sample input for day 18 only contains  the final sample input.
+
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -24,3 +26,4 @@ The sample puzzles for some days (eg 12, 16) multiple sample inputs. Edit the fi
 | <nobr> [Day 15: Chiton](https://adventofcode.com/2021/day/15) </nobr> | <nobr> [Part 1](/2021/cpp/day_15a.cpp) [Part 2](/2021/cpp/day_15b.cpp) </nobr> | </nobr> [Link](/2021/input/day_15_input) </nobr> | </nobr> [Link](/2021/sample_input/day_15_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_15_puzzle) </nobr> |
 | <nobr> [Day 16: Packet Decoder](https://adventofcode.com/2021/day/16) </nobr> | <nobr> [Part 1](/2021/cpp/day_16a.cpp) [Part 2](/2021/cpp/day_16b.cpp) </nobr> | </nobr> [Link](/2021/input/day_16_input) </nobr> | </nobr> [Link](/2021/sample_input/day_16_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_16_puzzle) </nobr> |
 | <nobr> [Day 17: Trick Shot](https://adventofcode.com/2021/day/17) </nobr> | <nobr> [Part 1](/2021/cpp/day_17a.cpp) [Part 2](/2021/cpp/day_17b.cpp) </nobr> | </nobr> [Link](/2021/input/day_17_input) </nobr> | </nobr> [Link](/2021/sample_input/day_17_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_17_puzzle) </nobr> |
+| <nobr> [Day 18: Snailfish](https://adventofcode.com/2021/day/18) </nobr> | <nobr> [Part 1](/2021/cpp/day_18a.cpp) [Part 2](/2021/cpp/day_18b.cpp) </nobr> | </nobr> [Link](/2021/input/day_18_input) </nobr> | </nobr> [Link](/2021/sample_input/day_18_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_18_puzzle) </nobr> |
