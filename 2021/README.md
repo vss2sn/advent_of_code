@@ -4,8 +4,8 @@ This folder contains solutions to each of the problems in Advent of Code 2021 in
 
 #### Note ####
 - The sample puzzles for some days (eg 12, 16) multiple sample inputs. Edit the file before using it.
-- For simplicity the sample input for day 18 only contains  the final sample input.
-
+- For simplicity the sample input for day 18 only contains the final sample input.
+- The sample input for day 24 is not a sample puzzle but a way to check some logic that might be required for the puzzle
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -32,3 +32,4 @@ This folder contains solutions to each of the problems in Advent of Code 2021 in
 | <nobr> [Day 21: Dirac Dice](https://adventofcode.com/2021/day/21) </nobr> | <nobr> [Part 1](/2021/cpp/day_21a.cpp) [Part 2](/2021/cpp/day_21b.cpp) </nobr> | </nobr> [Link](/2021/input/day_21_input) </nobr> | </nobr> [Link](/2021/sample_input/day_21_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_21_puzzle) </nobr> |
 | <nobr> [Day 22: Reactor Reboot](https://adventofcode.com/2021/day/22) </nobr> | <nobr> [Part 1](/2021/cpp/day_22a.cpp) [Part 2](/2021/cpp/day_22b.cpp) </nobr> | </nobr> [Link](/2021/input/day_22_input) </nobr> | </nobr> [Link](/2021/sample_input/day_22_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_22_puzzle) </nobr> |
 | <nobr> [Day 23: Amphipod](https://adventofcode.com/2021/day/23) </nobr> | <nobr> [Part 1](/2021/cpp/day_23a.cpp) [Part 2](/2021/cpp/day_23b.cpp) </nobr> | </nobr> [Link](/2021/input/day_23_input) </nobr> | </nobr> [Link](/2021/sample_input/day_23_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_23_puzzle) </nobr> |
+| <nobr> [Day 24: Arithmetic Logic Unit](https://adventofcode.com/2021/day/24) </nobr> | <nobr> [Part 1](/2021/cpp/day_24a.cpp) [Part 2](/2021/cpp/day_24b.cpp) </nobr> | </nobr> [Link](/2021/input/day_24_input) </nobr> | </nobr> [Link](/2021/sample_input/day_24_sample_input) </nobr> | </nobr> [Link](/2021/puzzles/day_24_puzzle) </nobr> |
