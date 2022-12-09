@@ -3,6 +3,7 @@
 This folder contains solutions to each of the problems in Advent of Code 2022 in C++.
 
 #### Note ####
+- The sample puzzles for some days (eg 9) multiple sample inputs. Edit the file before using it.
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -14,3 +15,4 @@ This folder contains solutions to each of the problems in Advent of Code 2022 in
 | <nobr> [Day 6: Tuning Trouble](https://adventofcode.com/2022/day/6) </nobr> | <nobr> [Part 1](/2022/cpp/day_06a.cpp) [Part 2](/2022/cpp/day_06b.cpp) </nobr> | </nobr> [Link](/2022/input/day_06_input) </nobr> | </nobr> [Link](/2022/sample_input/day_06_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_06_puzzle) </nobr> |
 | <nobr> [Day 7: No Space Left On Device](https://adventofcode.com/2022/day/7) </nobr> | <nobr> [Part 1](/2022/cpp/day_07a.cpp) [Part 2](/2022/cpp/day_07b.cpp) </nobr> | </nobr> [Link](/2022/input/day_07_input) </nobr> | </nobr> [Link](/2022/sample_input/day_07_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_07_puzzle) </nobr> |
 | <nobr> [Day 8: Treetop Tree House](https://adventofcode.com/2022/day/8) </nobr> | <nobr> [Part 1](/2022/cpp/day_08a.cpp) [Part 2](/2022/cpp/day_08b.cpp) </nobr> | </nobr> [Link](/2022/input/day_08_input) </nobr> | </nobr> [Link](/2022/sample_input/day_08_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_08_puzzle) </nobr> |
+| <nobr> [Day 9: Rope Bridge](https://adventofcode.com/2022/day/9) </nobr> | <nobr> [Part 1](/2022/cpp/day_09a.cpp) [Part 2](/2022/cpp/day_09b.cpp) </nobr> | </nobr> [Link](/2022/input/day_09_input) </nobr> | </nobr> [Link](/2022/sample_input/day_09_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_09_puzzle) </nobr> |
