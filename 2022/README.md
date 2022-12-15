@@ -4,6 +4,7 @@ This folder contains solutions to each of the problems in Advent of Code 2022 in
 
 #### Note ####
 - The sample puzzles for some days (eg 9) multiple sample inputs. Edit the file before using it.
+- Some solutions for some days (eg 15) need different constants for the sample input and the puzzle input. Edit the file before using it.
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -21,3 +22,4 @@ This folder contains solutions to each of the problems in Advent of Code 2022 in
 | <nobr> [Day 12: Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) </nobr> | <nobr> [Part 1](/2022/cpp/day_12a.cpp) [Part 2](/2022/cpp/day_12b.cpp) </nobr> | </nobr> [Link](/2022/input/day_12_input) </nobr> | </nobr> [Link](/2022/sample_input/day_12_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_12_puzzle) </nobr> |
 | <nobr> [Day 13: Distress Signal](https://adventofcode.com/2022/day/13) </nobr> | <nobr> [Part 1](/2022/cpp/day_13a.cpp) [Part 2](/2022/cpp/day_13b.cpp) </nobr> | </nobr> [Link](/2022/input/day_13_input) </nobr> | </nobr> [Link](/2022/sample_input/day_13_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_13_puzzle) </nobr> |
 | <nobr> [Day 14: Regolith Reservoir](https://adventofcode.com/2022/day/14) </nobr> | <nobr> [Part 1](/2022/cpp/day_14a.cpp) [Part 2](/2022/cpp/day_14b.cpp) </nobr> | </nobr> [Link](/2022/input/day_14_input) </nobr> | </nobr> [Link](/2022/sample_input/day_14_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_14_puzzle) </nobr> |
+| <nobr> [Day 15: Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) </nobr> | <nobr> [Part 1](/2022/cpp/day_15a.cpp) [Part 2](/2022/cpp/day_15b.cpp) </nobr> | </nobr> [Link](/2022/input/day_15_input) </nobr> | </nobr> [Link](/2022/sample_input/day_15_sample_input) </nobr> | </nobr> [Link](/2022/puzzles/day_15_puzzle) </nobr> |
