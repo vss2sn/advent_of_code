@@ -10,7 +10,8 @@
 // even when adding in jet index and rock type to the == comparator.
 // 5 rows of the chamber is arbitrary, might be able to make do with less.
 
-// TODO: use bitset and optimize
+// TODO: use bitset instead of array<char>
+// though array<bool> might be faster than bitset
 
 struct Point {
   Point(const std::size_t row, const int col) : row (row), col(col) {}
@@ -78,9 +79,9 @@ void add_rock_to_chamber(
   const Rock& rock
 ) {
   for (const auto& ele : rock) {
+    std::array<char, n_cols_in_chamber> temp;
+    std::fill(std::begin(temp), std::end(temp), '.');
     while(chamber.size() <= ele.row) {
-      std::array<char, n_cols_in_chamber> temp;
-      std::fill(std::begin(temp), std::end(temp), '.');
       chamber.push_back(temp);
     }
   }
@@ -90,6 +91,7 @@ void add_rock_to_chamber(
 }
 
 void apply_jet(Rock& rock, const std::string& jets, const int jet_index, const std::vector<std::array<char, n_cols_in_chamber>>& chamber) {
+  // Debug
   // for (int i = 0; i < jet_index; i++) {
   //   std::cout << ' ';
   // }
@@ -125,7 +127,7 @@ void print(const Rock& rock) {
 }
 
 void print_chamber(const Chamber& chamber) {
-  std::cout << chamber.size() << '\n';
+  std::cout << "Chamber size: " << chamber.size() << '\n';
   for (std::size_t i = chamber.size()-1; i > 0; i--) {
     std::cout << "|";
     for (const auto & ele : chamber[i]) {
@@ -149,7 +151,7 @@ std::tuple<bool, std::size_t, std::size_t> check_if_seen_else_add(
     return {true, it->second, it->first.highest};
   }
   history[memory] = iteration;
-  return {false, -1, -1};
+  return {false, 0, 0};
 }
 
 int main(int argc, char * argv[]) {
@@ -179,14 +181,15 @@ int main(int argc, char * argv[]) {
   int rock_count = 0;
   int jet_index = 0;
   std::vector<std::array<char, n_cols_in_chamber>> chamber;
+  std::unordered_map<Memory, std::size_t, MemoryHash> history;
   std::array<char, n_cols_in_chamber> temp;
   std::fill(std::begin(temp), std::end(temp), '#');
   chamber.push_back(temp);
-  Chamber top_n;
+
+  Chamber top_n; // Mini chamber, top_n rows of chamber
   for (auto& row : top_n) {
     std::fill(std::begin(row), std::end(row), 0);
   }
-  std::unordered_map<Memory, std::size_t, MemoryHash> history;
 
   while (rock_count < 1000000000000) {
     auto rock = rocks[rock_count % 5];

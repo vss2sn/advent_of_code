@@ -1,8 +1,8 @@
 #include <array>
-#include <unordered_set>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 struct Point {
@@ -50,13 +50,6 @@ void add_rock_to_chamber(std::vector<std::array<char, 7>>& chamber, const Rock& 
 }
 
 void apply_jet(Rock& rock, const std::string& jets, const int jet_index, const std::vector<std::array<char, 7>>& chamber) {
-  // std::cout << jets << '\n';
-  // for (int i = 0; i < jet_index; i++) {
-  //   std::cout << ' ';
-  // }
-  // std::cout << '^';
-  // std::cout << '\n';
-  // std::cout << j << '\n';
   const auto prev = rock;
   if (const char j = jets[jet_index]; j == '>') {
     for (auto& ele : rock) {
@@ -133,42 +126,20 @@ int main(int argc, char * argv[]) {
   std::array<char, 7> temp;
   std::fill(std::begin(temp), std::end(temp), '#');
   chamber.push_back(temp);
-  // print_chamber(chamber);
-  // exit(0);
-  // std::cout << __LINE__ <<'\n';
   while (rock_count < 2022) {
-    // std::cout << "---------------- Begin -------------------" << '\n';
     auto rock = rocks[rock_count % 5];
     rock_count++;
-    // std::cout << __LINE__ <<'\n';
     move_to_starting_height(rock, highest);
-    // std::cout << __LINE__ <<'\n';
     auto prev = rock;
-    // move(rock);
-    // print(rock);
-
     while (!intersection(chamber, rock)) {
-      // std::cout << __LINE__ <<'\n';
       apply_jet(rock, jets, jet_index, chamber);
-      // std::cout << __LINE__ <<'\n';
-      // print(rock);
-      // std::cout << __LINE__ <<'\n';
       jet_index++;
       if (jet_index == jets.size()) jet_index = 0;
       prev = rock;
       move(rock);
-      // std::cout << __LINE__ <<'\n';
-      // print(rock);
     }
-    // print(prev);
-    // std::cout << __LINE__ <<'\n';
     add_rock_to_chamber(chamber, prev);
-    // std::cout << __LINE__ <<'\n';
-    // print(chamber);
     highest = chamber.size();
-    // std::cout << "---------------- End -------------------" << '\n';
-    // print_chamber(chamber);
-    // if (rock_count == 10) exit(0);
   }
   std::cout << highest - 1 << '\n';
 }
