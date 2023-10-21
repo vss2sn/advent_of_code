@@ -14,12 +14,12 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 | <nobr> [Day 5: A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) </nobr> | <nobr> [Part 1](/2017/cpp/day_05a.cpp) [Part 2](/2017/cpp/day_05b.cpp) </nobr> |[Link](/2017/input/day_05_input)|[Link](/2017/sample_input/day_05_sample_input)|[Link](/2017/puzzles/day_05_puzzle)|
 | <nobr> [Day 6: Memory Reallocation](https://adventofcode.com/2017/day/6) </nobr> | <nobr> [Part 1](/2017/cpp/day_06a.cpp) [Part 2](/2017/cpp/day_06b.cpp) </nobr> |[Link](/2017/input/day_06_input)|[Link](/2017/sample_input/day_06_sample_input)|[Link](/2017/puzzles/day_06_puzzle)|
 | <nobr> [Day 7: Recursive Circus](https://adventofcode.com/2017/day/7) </nobr> | <nobr> [Part 1](/2017/cpp/day_07a.cpp) [Part 2](/2017/cpp/day_07b.cpp) </nobr> | [Link](/2017/input/day_07_input)|[Link](/2017/sample_input/day_07_sample_input)|[Link](/2017/puzzles/day_07_puzzle)|
+| <nobr> [Day 8: I Heard You Like Registers](https://adventofcode.com/2017/day/8) </nobr> | <nobr> [Part 1](/2017/cpp/day_08a.cpp) [Part 2](/2017/cpp/day_08b.cpp) </nobr> | [Link](/2017/input/day_08_input)|[Link](/2017/sample_input/day_08_sample_input)|[Link](/2017/puzzles/day_08_puzzle)|
 
 #### TODO ####
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
-| <nobr> [Day 8: ](https://adventofcode.com/2017/day/8) </nobr> | <nobr> [Part 1](/2017/cpp/day_08a.cpp) [Part 2](/2017/cpp/day_08b.cpp) </nobr> | [Link](/2017/input/day_08_input)|[Link](/2017/sample_input/day_08_sample_input)|[Link](/2017/puzzles/day_08_puzzle)|
 | <nobr> [Day 9: ](https://adventofcode.com/2017/day/9) </nobr> | <nobr> [Part 1](/2017/cpp/day_09a.cpp) [Part 2](/2017/cpp/day_09b.cpp) </nobr> | [Link](/2017/input/day_09_input)|[Link](/2017/sample_input/day_09_sample_input)|[Link](/2017/puzzles/day_09_puzzle)|
 | <nobr> [Day 10: ](https://adventofcode.com/2017/day/10) </nobr> | <nobr> [Part 1](/2017/cpp/day_10a.cpp) [Part 2](/2017/cpp/day_10b.cpp) </nobr> |[Link](/2017/input/day_10_input)|[Link](/2017/sample_input/day_10_sample_input)|[Link](/2017/puzzles/day_10_puzzle)|
 | <nobr> [Day 11: ](https://adventofcode.com/2017/day/11) </nobr> | <nobr> [Part 1](/2017/cpp/day_11a.cpp) [Part 2](/2017/cpp/day_11b.cpp) </nobr> |[Link](/2017/input/day_11_input)|[Link](/2017/sample_input/day_11_sample_input)|[Link](/2017/puzzles/day_11_puzzle)|
