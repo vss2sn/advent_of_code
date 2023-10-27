@@ -4,6 +4,7 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 
 #### Notes ####
 * There are multiple sample puzzle inputs for some days. Modify the sample input file appropriately before using it.
+* There are places where the sample input and input have different parameters (for e.g. day 16, where n = 5 and 16 respectively). Modify the .cpp file appropriately before using it.
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -22,12 +23,12 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 | <nobr> [Day 13: Packet Scanners](https://adventofcode.com/2017/day/13) </nobr> | <nobr> [Part 1](/2017/cpp/day_13a.cpp) [Part 2](/2017/cpp/day_13b.cpp) </nobr> |[Link](/2017/input/day_13_input)|[Link](/2017/sample_input/day_13_sample_input)|[Link](/2017/puzzles/day_13_puzzle)|
 | <nobr> [Day 14: Disk Defragmentation](https://adventofcode.com/2017/day/14) </nobr> | <nobr> [Part 1](/2017/cpp/day_14a.cpp) [Part 2](/2017/cpp/day_14b.cpp) </nobr> |[Link](/2017/input/day_14_input)|[Link](/2017/sample_input/day_14_sample_input)|[Link](/2017/puzzles/day_14_puzzle)|
 | <nobr> [Day 15: Dueling Generators](https://adventofcode.com/2017/day/15) </nobr> | <nobr> [Part 1](/2017/cpp/day_15a.cpp) [Part 2](/2017/cpp/day_15b.cpp) </nobr> |[Link](/2017/input/day_15_input)|[Link](/2017/sample_input/day_15_sample_input)|[Link](/2017/puzzles/day_15_puzzle)|
+| <nobr> [Day 16: Permutation Promenade](https://adventofcode.com/2017/day/16) </nobr> | <nobr> [Part 1](/2017/cpp/day_16a.cpp) [Part 2](/2017/cpp/day_16b.cpp) </nobr> |[Link](/2017/input/day_16_input)|[Link](/2017/sample_input/day_16_sample_input)|[Link](/2017/puzzles/day_16_puzzle)|
 
 #### TODO ####
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
-| <nobr> [Day 16: ](https://adventofcode.com/2017/day/16) </nobr> | <nobr> [Part 1](/2017/cpp/day_16a.cpp) [Part 2](/2017/cpp/day_16b.cpp) </nobr> |[Link](/2017/input/day_16_input)|[Link](/2017/sample_input/day_16_sample_input)|[Link](/2017/puzzles/day_16_puzzle)|
 | <nobr> [Day 17: ](https://adventofcode.com/2017/day/17) </nobr> | <nobr> [Part 1](/2017/cpp/day_17a.cpp) [Part 2](/2017/cpp/day_17b.cpp) </nobr> |[Link](/2017/input/day_17_input)|[Link](/2017/sample_input/day_17_sample_input)|[Link](/2017/puzzles/day_17_puzzle)|
 | <nobr> [Day 18: ](https://adventofcode.com/2017/day/18) </nobr> | <nobr> [Part 1](/2017/cpp/day_18a.cpp) [Part 2](/2017/cpp/day_18b.cpp) </nobr> |[Link](/2017/input/day_18_input)|[Link](/2017/sample_input/day_18_sample_input)|[Link](/2017/puzzles/day_18_puzzle)|
 | <nobr> [Day 19: ](https://adventofcode.com/2017/day/19) </nobr> | <nobr> [Part 1](/2017/cpp/day_19a.cpp) [Part 2](/2017/cpp/day_19b.cpp) </nobr> |[Link](/2017/input/day_19_input)|[Link](/2017/sample_input/day_19_sample_input)|[Link](/2017/puzzles/day_19_puzzle)|
