@@ -25,12 +25,12 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 | <nobr> [Day 15: Dueling Generators](https://adventofcode.com/2017/day/15) </nobr> | <nobr> [Part 1](/2017/cpp/day_15a.cpp) [Part 2](/2017/cpp/day_15b.cpp) </nobr> |[Link](/2017/input/day_15_input)|[Link](/2017/sample_input/day_15_sample_input)|[Link](/2017/puzzles/day_15_puzzle)|
 | <nobr> [Day 16: Permutation Promenade](https://adventofcode.com/2017/day/16) </nobr> | <nobr> [Part 1](/2017/cpp/day_16a.cpp) [Part 2](/2017/cpp/day_16b.cpp) </nobr> |[Link](/2017/input/day_16_input)|[Link](/2017/sample_input/day_16_sample_input)|[Link](/2017/puzzles/day_16_puzzle)|
 | <nobr> [Day 17: Spinlock](https://adventofcode.com/2017/day/17) </nobr> | <nobr> [Part 1](/2017/cpp/day_17a.cpp) [Part 2](/2017/cpp/day_17b.cpp) </nobr> |[Link](/2017/input/day_17_input)|[Link](/2017/sample_input/day_17_sample_input)|[Link](/2017/puzzles/day_17_puzzle)|
+| <nobr> [Day 18: Duet](https://adventofcode.com/2017/day/18) </nobr> | <nobr> [Part 1](/2017/cpp/day_18a.cpp) [Part 2](/2017/cpp/day_18b.cpp) </nobr> |[Link](/2017/input/day_18_input)|[Link](/2017/sample_input/day_18_sample_input)|[Link](/2017/puzzles/day_18_puzzle)|
 
 #### TODO ####
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
-| <nobr> [Day 18: ](https://adventofcode.com/2017/day/18) </nobr> | <nobr> [Part 1](/2017/cpp/day_18a.cpp) [Part 2](/2017/cpp/day_18b.cpp) </nobr> |[Link](/2017/input/day_18_input)|[Link](/2017/sample_input/day_18_sample_input)|[Link](/2017/puzzles/day_18_puzzle)|
 | <nobr> [Day 19: ](https://adventofcode.com/2017/day/19) </nobr> | <nobr> [Part 1](/2017/cpp/day_19a.cpp) [Part 2](/2017/cpp/day_19b.cpp) </nobr> |[Link](/2017/input/day_19_input)|[Link](/2017/sample_input/day_19_sample_input)|[Link](/2017/puzzles/day_19_puzzle)|
 | <nobr> [Day 20: ](https://adventofcode.com/2017/day/20) </nobr> | <nobr> [Part 1](/2017/cpp/day_20a.cpp) [Part 2](/2017/cpp/day_20b.cpp) </nobr> |[Link](/2017/input/day_20_input)|[Link](/2017/sample_input/day_20_sample_input)|[Link](/2017/puzzles/day_20_puzzle)|
 | <nobr> [Day 21: ](https://adventofcode.com/2017/day/21) </nobr> | <nobr> [Part 1](/2017/cpp/day_21a.cpp) [Part 2](/2017/cpp/day_21b.cpp) </nobr> |[Link](/2017/input/day_21_input)|[Link](/2017/sample_input/day_21_sample_input)|[Link](/2017/puzzles/day_21_puzzle)|
