@@ -32,11 +32,11 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 | <nobr> [Day 21: Fractal Art](https://adventofcode.com/2017/day/21) </nobr> | <nobr> [Part 1](/2017/cpp/day_21a.cpp) [Part 2](/2017/cpp/day_21b.cpp) </nobr> |[Link](/2017/input/day_21_input)|[Link](/2017/sample_input/day_21_sample_input)|[Link](/2017/puzzles/day_21_puzzle)|
 | <nobr> [Day 22: Sporifica Virus](https://adventofcode.com/2017/day/22) </nobr> | <nobr> [Part 1](/2017/cpp/day_22a.cpp) [Part 2](/2017/cpp/day_22b.cpp) </nobr> |[Link](/2017/input/day_22_input)|[Link](/2017/sample_input/day_22_sample_input)|[Link](/2017/puzzles/day_22_puzzle)|
 | <nobr> [Day 23: Coprocessor Conflagration](https://adventofcode.com/2017/day/23) </nobr> | <nobr> [Part 1](/2017/cpp/day_23a.cpp) [Part 2](/2017/cpp/day_23b.cpp) </nobr> |[Link](/2017/input/day_23_input)|[Link](/2017/sample_input/day_23_sample_input)|[Link](/2017/puzzles/day_23_puzzle)|
+| <nobr> [Day 24: Electromagnetic Moat](https://adventofcode.com/2017/day/24) </nobr> | <nobr> [Part 1](/2017/cpp/day_24a.cpp) [Part 2](/2017/cpp/day_24b.cpp) </nobr> |[Link](/2017/input/day_24_input)|[Link](/2017/sample_input/day_24_sample_input)|[Link](/2017/puzzles/day_24_puzzle)|
 
 #### TODO ####
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
-| <nobr> [Day 24: ](https://adventofcode.com/2017/day/24) </nobr> | <nobr> [Part 1](/2017/cpp/day_24a.cpp) [Part 2](/2017/cpp/day_24b.cpp) </nobr> |[Link](/2017/input/day_24_input)|[Link](/2017/sample_input/day_24_sample_input)|[Link](/2017/puzzles/day_24_puzzle)|
 
 | <nobr> [Day 25: ](https://adventofcode.com/2017/day/25) </nobr> | <nobr> [Part 1](/2017/cpp/day_25a.cpp) </nobr> | </nobr> |[Link](/2017/input/day_25_input)|[Link](/2017/sample_input/day_25_sample_input)|[Link](/2017/puzzles/day_25_puzzle)|
