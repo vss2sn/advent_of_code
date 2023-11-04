@@ -5,6 +5,7 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 #### Notes ####
 * There are multiple sample puzzle inputs for some days. Modify the sample input file appropriately before using it.
 * There are places where the sample input and input have different parameters (for e.g. day 16, where n = 5 and 16 respectively and day 18, where iterations = 2 and 5(18) respectively). Modify the .cpp file appropriately before using it.
+* Note that some days (like 23) do not have a sample input
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
@@ -30,12 +31,12 @@ This folder contains solutions to each of the problems in Advent of Code 2017 in
 | <nobr> [Day 20: Particle Swarm](https://adventofcode.com/2017/day/20) </nobr> | <nobr> [Part 1](/2017/cpp/day_20a.cpp) [Part 2](/2017/cpp/day_20b.cpp) </nobr> |[Link](/2017/input/day_20_input)|[Link](/2017/sample_input/day_20_sample_input)|[Link](/2017/puzzles/day_20_puzzle)|
 | <nobr> [Day 21: Fractal Art](https://adventofcode.com/2017/day/21) </nobr> | <nobr> [Part 1](/2017/cpp/day_21a.cpp) [Part 2](/2017/cpp/day_21b.cpp) </nobr> |[Link](/2017/input/day_21_input)|[Link](/2017/sample_input/day_21_sample_input)|[Link](/2017/puzzles/day_21_puzzle)|
 | <nobr> [Day 22: Sporifica Virus](https://adventofcode.com/2017/day/22) </nobr> | <nobr> [Part 1](/2017/cpp/day_22a.cpp) [Part 2](/2017/cpp/day_22b.cpp) </nobr> |[Link](/2017/input/day_22_input)|[Link](/2017/sample_input/day_22_sample_input)|[Link](/2017/puzzles/day_22_puzzle)|
+| <nobr> [Day 23: Coprocessor Conflagration](https://adventofcode.com/2017/day/23) </nobr> | <nobr> [Part 1](/2017/cpp/day_23a.cpp) [Part 2](/2017/cpp/day_23b.cpp) </nobr> |[Link](/2017/input/day_23_input)|[Link](/2017/sample_input/day_23_sample_input)|[Link](/2017/puzzles/day_23_puzzle)|
 
 #### TODO ####
 
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
-| <nobr> [Day 23: ](https://adventofcode.com/2017/day/23) </nobr> | <nobr> [Part 1](/2017/cpp/day_23a.cpp) [Part 2](/2017/cpp/day_23b.cpp) </nobr> |[Link](/2017/input/day_23_input)|[Link](/2017/sample_input/day_23_sample_input)|[Link](/2017/puzzles/day_23_puzzle)|
 | <nobr> [Day 24: ](https://adventofcode.com/2017/day/24) </nobr> | <nobr> [Part 1](/2017/cpp/day_24a.cpp) [Part 2](/2017/cpp/day_24b.cpp) </nobr> |[Link](/2017/input/day_24_input)|[Link](/2017/sample_input/day_24_sample_input)|[Link](/2017/puzzles/day_24_puzzle)|
 
 | <nobr> [Day 25: ](https://adventofcode.com/2017/day/25) </nobr> | <nobr> [Part 1](/2017/cpp/day_25a.cpp) </nobr> | </nobr> |[Link](/2017/input/day_25_input)|[Link](/2017/sample_input/day_25_sample_input)|[Link](/2017/puzzles/day_25_puzzle)|
