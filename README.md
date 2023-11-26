@@ -12,3 +12,20 @@ This repository contains solutions to the Advent of Code puzzles.
 |2019  |1-25 |1-7 | [Link](/2019/) |[Link](/2019/README.md) |
 |2018  |1-25 | - | [Link](/2018/) |[Link](/2018/README.md) |
 |2017  |1-25 | - | [Link](/2017/) |[Link](/2017/README.md) |
+
+## To run ##
+
+To run any day's/puzzle's solution, use the following command:
+
+```bash
+# To compile
+# <clang++/g++> <year>/cpp/day_<##><a/b>.cpp -o <output file>
+# To run
+# ./<output file> <path to input file>
+# ./<output file> <year>/<input/sample_input>/day_<##>_<input/sample_input>
+
+# Sample
+g++ 2017/cpp/day_01a.cpp -o a.out
+./a.out 2017/input/day_01_input
+```
+    
