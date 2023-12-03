@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 
-// Refactor
-
 struct Number {
   int col; 
   int row; 
@@ -71,10 +69,16 @@ int main(int argc, char * argv[]) {
   }
   std::unordered_map<int, Gear> gears;
   for (const auto& n : numbers) {
-    // No need to go over the number itself; refactor
+    
     for (int row = n.row - 1; (row <= n.row + 1); row++) {
       if (row < 0 || row >= map.size()) continue;
-      for (int col = n.col - 1; (col <= n.col + n.order); col++) {
+      // Only need to check the points around the number
+      // ????????
+      // ?number?
+      // ????????
+      // Check only the first and last element in the row that contains the number
+      const int col_increment = (row == n.row) ? n.order + 1 : 1; 
+      for (int col = n.col - 1; (col <= n.col + n.order); col += col_increment) {
         if (col < 0 || col >= map[row].size()) continue;
         if (map[row][col] == '*') {
           const int id = map[0].size() * row + col; // assumes each row is the same length

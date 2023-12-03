@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 
-// Refactor
-
 struct Number {
   int col; 
   int row; 
@@ -68,10 +66,15 @@ int main(int argc, char * argv[]) {
   std::vector<int> parts;
   for (const auto& n : numbers) {
     bool still_searching = true;
-    // No need to go over the number itself; refactor
     for (int row = n.row - 1; (row <= n.row + 1) && still_searching; row++) {
       if (row < 0 || row >= map.size()) continue;
-      for (int col = n.col - 1; (col <= n.col + n.order) && still_searching; col++) {
+      // Only need to check the points around the number
+      // ????????
+      // ?number?
+      // ????????
+      // Check only the first and last element in the row that contains the number
+      const int col_increment = (row == n.row) ? n.order + 1 : 1;
+      for (int col = n.col - 1; (col <= n.col + n.order) && still_searching; col += col_increment) {
         if (col < 0 || col >= map[row].size()) continue;
         if (map[row][col] != '.' && !(map[row][col] >= '0' && map[row][col] <= '9')) {
           still_searching = false;
