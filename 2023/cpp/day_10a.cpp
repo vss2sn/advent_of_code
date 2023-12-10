@@ -16,54 +16,38 @@ struct Point {
   bool operator !=  (const Point& p) const {
     return !(p == *this);
   }
+
+  Point(const int row = 0, const int col = 0) : row(row), col(col) {}
 };
 
 bool in_limits(const Point& p, const std::vector<std::string>& map) {
   return p.row >= 0 && p.row < map.size() && p.col >= 0 && p.col <  map[p.row].size();
 }
 
+const std::vector<Point> deltas {
+  Point(-1, 0),
+  Point(0, 1),
+  Point(1, 0),
+  Point(0, -1)
+};
+
 Point get_next_point(const Point& point, const Point& previous_point, const std::vector<std::string>& map, const std::vector<std::vector<std::array<int, 4>>>& direction_map) {
-  std::cout << point.row << ", " << point.col << '\n';
   std::vector<Point> next_points;
   const auto& point_directions = direction_map[point.row][point.col];
-  if (point_directions[0]) {
-    Point next_point;
-    next_point.row = point.row - 1; 
-    next_point.col = point.col; 
-    if (in_limits(next_point, map) && direction_map[next_point.row][next_point.col][(0 + 2) % 4]  && next_point != previous_point) {
-      return next_point;
+  for (int i = 0; i < 4; i++) {
+    if (point_directions[i]) {
+      const Point next_point(point.row + deltas[i].row, point.col + deltas[i].col);
+      if (in_limits(next_point, map) && direction_map[next_point.row][next_point.col][(i + 2) % 4]  && next_point != previous_point) {
+        return next_point;
+      }
     }
-  }
-  if (point_directions[1]) {
-    Point next_point;
-    next_point.row = point.row; 
-    next_point.col = point.col + 1;
-    if (in_limits(next_point, map) && direction_map[next_point.row][next_point.col][(1 + 2) % 4]  && next_point != previous_point) {
-      return next_point;
-    }
-  }
-  if (point_directions[2]) {
-    Point next_point;
-    next_point.row = point.row + 1; 
-    next_point.col = point.col;
-    if (in_limits(next_point, map) && direction_map[next_point.row][next_point.col][(2 + 2) % 4]  && next_point != previous_point) {
-      return next_point;
-    }
-  }
-  if (point_directions[3]) {
-    Point next_point;
-    next_point.row = point.row; 
-    next_point.col = point.col - 1; 
-    if (in_limits(next_point, map) && direction_map[next_point.row][next_point.col][(3 + 2) % 4]  && next_point != previous_point) {
-      return next_point;
-    }
-  }
-  Point p;
-  p.row = -1;
-  p.col = -1;
+  }  
+  Point p(-1, -1);
   std::cout << "This should not happen" << '\n';
+  exit(0);
   return p;
 }
+
 
 struct PS {
   Point point;
@@ -90,7 +74,6 @@ int main(int argc, char * argv[]) {
   previous.row = -1;
   previous.col = -1;
   while(std::getline(file, line)) {
-    std::cout << line << '\n';
     map.push_back(line);
     direction_map.push_back({});
     direction_map.back().reserve(line.size()  * 4);
