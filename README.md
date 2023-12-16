@@ -6,7 +6,7 @@ This repository contains solutions to the Advent of Code puzzles.
 
 | Year | C++ | Python | Link to folders | Link to README.md |
 |:----:|:----:|:----:|:----:|:----:|
-|2023  |1-14  | - | [Link](/2023/) |[Link](/2023/README.md) |
+|2023  |1-15  | - | [Link](/2023/) |[Link](/2023/README.md) |
 |2022  |1-25 | - | [Link](/2022/) |[Link](/2022/README.md) |
 |2021  |1-25 | - | [Link](/2021/) |[Link](/2021/README.md) |
 |2020  |1-25 |1-25 | [Link](/2020/) |[Link](/2020/README.md) |
