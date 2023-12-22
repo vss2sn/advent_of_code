@@ -63,7 +63,6 @@ DigPlanStep parse (const std::string& line) {
   auto space_idx = line.find(' ', 2);
   dps.length = std::stoi(line.substr(2, space_idx - 2));
   dps.colour = line.substr(space_idx + 2, line.size() - 1 - space_idx - 2);
-  std::cout << dps.direction << ' ' << dps.length << ' ' << dps.colour << '\n';
   return dps;
 }
 
@@ -82,50 +81,29 @@ int main(int argc, char * argv[]) {
     plan.emplace_back(parse(line));
     current.row = current.row + motions[plan.back().direction].row * plan.back().length;
     current.col = current.col + motions[plan.back().direction].col * plan.back().length;
-    std::cout << current.row << ' ' << current.col << '\n';
     borders[0] = std::min(borders[0], current.row);
     borders[1] = std::max(borders[1], current.col);
     borders[2] = std::max(borders[2], current.row);
     borders[3] = std::min(borders[3], current.col);
   }
-  for (const auto& ele : borders) {
-    std::cout << ele << ' ' ;
-  }
-  std::cout << '\n';
-
-  std::cout << __LINE__ << '\n';
+  
   std::vector<std::vector<char>> map (borders[2] - borders[0] + 1, std::vector<char>(borders[1] - borders[3] + 1, '.'));
   current = Point(-borders[0], -borders[3]);
-  std::cout << current.row << ' ' << current.col << '\n';
   for (const auto& step : plan) {
     for (int  i = 0; i < step.length; i++) {
-      std::cout << __LINE__ << '\n';
       current = current + motions[step.direction];
-      std::cout << current.row << ' ' << current.col << '\n';
-      std::cout << __LINE__ << '\n';
       map[current.row][current.col] = '#';
-      std::cout << __LINE__ << '\n';
     }
   }
-
-  for (const auto& row : map) {
-    for (const auto ele : row) {
-      std::cout << ele;
-    }
-    std::cout << '\n';
-  }
-
 
   // find point touching the LHS border
   for (int i = 0; i < map.size(); i++) {
-    std::cout << __LINE__ << '\n';
     if (map[i][0] == '#') {
       current.row = i+1;
       current.col = 1;
-      assert (map[current.row][current.col] == '.');
+      // assert (map[current.row][current.col] == '.');
       break;
     }
-    std::cout << __LINE__ << '\n';
   }
   
   std::queue<Point> q;
@@ -151,11 +129,8 @@ int main(int argc, char * argv[]) {
   for (const auto& row : map) {
     for (const auto ele : row) {
       if (ele == '#') count++;
-      std::cout << ele;
     }
-    std::cout << '\n';
   }
   std::cout << count << '\n';
-
   return 0;
 }
