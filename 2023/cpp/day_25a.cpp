@@ -2,47 +2,26 @@
 #include <numeric>
 #include <fstream>
 #include <iostream>
+#include <random>
 #include <string>
 #include <string_view>
-#include <vector>
+#include <stack>
 #include <unordered_set>  
 #include <unordered_map>  
-#include <random>
-#include <cassert>
-#include <stack>
+#include <vector>
 
 // Used Karger's algorithm
-// Refactor this; should run much faster
-// Also, other algos are available
+// Also, other algorithms are available
 
 struct Edge {
   std::string start;
   std::string end;
-  std::size_t hash = 0;
   bool operator == (const Edge& e) const{
     return start == e.start && end == e.end;
   }
-  void update_hash() {
-    std::size_t p = 1;
-    for (int i = 0; i < start.size(); i++) {
-      hash += p * (start[i] - 'a');
-      p*= 10;
-    }
-    for (int i = 0; i < end.size(); i++) {
-      hash += p * (start[i] - 'a');
-      p *= 10;
-    }
-  }
 };
 
-struct hasher {
-  std::size_t operator () (const Edge& e) const {
-    return e.hash;
-
-  }
-};
-
-void parse_input(const std::string& input_str, std::unordered_set<Edge, hasher>& edges) {
+void parse_input(const std::string& input_str, std::vector<Edge>& edges) {
   const std::string from = input_str.substr(0, 3);
   std::size_t start = 5;
   std::size_t end = input_str.find(' ', start);
@@ -53,14 +32,13 @@ void parse_input(const std::string& input_str, std::unordered_set<Edge, hasher>&
     Edge edge;
     edge.start = from;
     edge.end = to;
-    edge.update_hash();
-    edges.insert(edge);
+    edges.push_back(edge);
   }
   const std::string to = input_str.substr(start, input_str.size() - start);
   Edge edge;
   edge.start = from;
   edge.end = to;
-  edges.insert(edge);
+  edges.push_back(edge);
 }
 
 const std::string& UnionFindRCFindUtil(const std::string& v, std::unordered_map<std::string, std::pair<std::string, int>>& subsets){
@@ -84,34 +62,42 @@ void UnionFindRCUnionUtil(const std::string& v1, const std::string& v2, std::uno
   }
 }
 
-std::random_device dev;
-std::mt19937 rng(dev());
-std::uniform_int_distribution<std::mt19937::result_type> dist(1000);
-
-void KargersAlgorithm(std::vector<Edge> edges, 
+bool KargersAlgorithm(std::vector<Edge>& edges, 
                       std::size_t n_vertices,
                       std::unordered_map<std::string, std::pair<std::string, int>> subsets,
-                      std::unordered_map<Edge, int, hasher>& answers) {
-  int count = edges.size();
+                      std::vector<Edge>& wires_to_cut) {
+  // Shuffle the order of edges here and then proceed in order instead of randomly choosing edges 
+  static std::random_device dev;
+  static std::mt19937 rng(dev());
+  std::shuffle(edges.begin(), edges.end(), rng);
+
+  int count = edges.size()-1;
   while (n_vertices > 2) {
-    const auto idx = dist(rng) % (count);
-    const auto& edge = edges[idx];
+    const auto& edge = edges[count];
     const auto& p1 = UnionFindRCFindUtil(edge.start, subsets);
     const auto& p2 = UnionFindRCFindUtil(edge.end, subsets);
+    count--;
     if (p1 != p2) {
       UnionFindRCUnionUtil(p1, p2, subsets);
       n_vertices--;
     }
-    count--;
-    std::swap(edges[idx], edges[count]);
   }
-  for (int i = 0; i < count; i++) {
+  int count_without_self_edges = 0;
+  for (int i = 0; i <= count; i++) {
     const auto& p1 = UnionFindRCFindUtil(edges[i].start, subsets);
     const auto& p2 = UnionFindRCFindUtil(edges[i].end, subsets);
     if (p1 != p2) {
-      answers[edges[i]]++;
+      count_without_self_edges++;
+      wires_to_cut.push_back(edges[i]);
     }
   }
+  
+  // Early breaking condition
+  if (count_without_self_edges == 3) {
+    return true;
+  }
+  wires_to_cut.clear();
+  return false;
 }
 
 int main(int argc, char * argv[]) {
@@ -122,43 +108,45 @@ int main(int argc, char * argv[]) {
 
   std::string line;
   std::fstream file(input);
-  std::unordered_set<Edge, hasher> edges_main;
+  std::vector<Edge> edges;
   while(std::getline(file, line)) {
-    parse_input(line, edges_main);
+    parse_input(line, edges);
   }
 
-  dist = std::uniform_int_distribution<std::mt19937::result_type>(edges_main.size());
   std::unordered_set<std::string> vertices;
-  std::vector<Edge> edges_v;
-  for (const auto& edge : edges_main) {
+  for (const auto& edge : edges) {
     vertices.insert(edge.start);
     vertices.insert(edge.end);
-    edges_v.push_back(edge);
   }
   
-  std::unordered_map<Edge, int, hasher> answers;
-
+  std::vector<Edge> wires_to_cut;
   std::unordered_map<std::string, std::pair<std::string, int>> subsets;
   for (const auto& v : vertices) {
     subsets[v] = {v, 0};
   }
   const auto n_vertices = vertices.size();
-  for (int iteration = 0; iteration < 10000; iteration++) {
-    if (iteration % 100 == 0) std::cout << "Iteration: " << iteration << '\n';
-    KargersAlgorithm(edges_v, n_vertices, subsets, answers);
+  // int iteration = 0;
+  while (!KargersAlgorithm(edges, n_vertices, subsets, wires_to_cut)) {
+    // std::cout << "Iteration: " << iteration << '\n';
+    // iteration++;
   }
-  // Create the edge list with the top 3 edges removed.
-  auto edges = edges_main;
-  { 
-    std::vector<std::pair<Edge, int>> answers_v;
-    for (const auto& [edge, count] : answers) {
-      answers_v.push_back({edge, count});
+  
+  // Remove the 3 wires to cut from the list of edges by 
+  // moving them to the end of the vector and then erasing
+  {
+    int count = 0;
+    for (const auto& wire : wires_to_cut) {
+      auto it = std::find(std::begin(edges), std::end(edges), wire);
+      auto end_it = edges.end();
+      std::advance(end_it, -(count + 1));
+      std::iter_swap(it, end_it);
+      count++;
     }
-    std::partial_sort(std::begin(answers_v), std::begin(answers_v) + 3, std::end(answers_v), [](const auto& e1, const auto& e2) { return e1.second > e2.second; });
-    edges.erase(answers_v[0].first);
-    edges.erase(answers_v[1].first);
-    edges.erase(answers_v[2].first);
+    auto end_it = edges.end();
+    std::advance(end_it, -count); 
+    edges.erase(end_it, std::end(edges));
   }
+  
   // Find all the points connecting to a single (random) point to find one of the disjoint sets
   std::unordered_map<std::string, std::unordered_set<std::string>> adj_list;
   for (const auto& e : edges) {
