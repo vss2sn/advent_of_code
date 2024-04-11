@@ -1,53 +1,38 @@
-
-#include <algorithm>
-#include <fstream>
 #include <iostream>
+#include <fstream>
 #include <string>
-#include <limits>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
-#include <regex>
 
 int main(int argc, char* argv[]) {
-  const std::string input = (argc > 1) ? argv[1] : "../input/day_09_input" ;  
-  std::ifstream file(input);
-  std::string line;
-  while(std::getline(file, line)) {
-    int idx = 0;
-    bool is_in_garbage = false;
-    int level = 0;
-    int score = 0;
-    int groups = 0;
-    int char_count = 0;
-    while(idx < line.size()) {
-      if (!is_in_garbage) {
-        if (line[idx] == '{') {
-          level++;
-          score +=  level;
-          groups++;
-        } 
-        else if (line[idx] == '}') {
-          level--;
-        } 
-        else if (line[idx] == '<') {
-          is_in_garbage = true;
-        } 
-      } else {
-        if (line[idx] == '!') {
-          idx++;
-        } else if (line[idx] == '>') {
-          is_in_garbage = false;
-        } else {
-          char_count++;
+    const std::string input = (argc > 1) ? argv[1] : "input";
+    std::ifstream file(input);
+    std::string line;
+    int total_garbage_chars = 0; // 垃圾中的非取消字符数量
+
+    while (std::getline(file, line)) {
+        int idx = 0;
+        bool is_in_Garbage = false;
+        int garbage_chars = 0; // 当前垃圾中的字符数量
+
+        while (idx < line.size()) {
+            if (!is_in_Garbage) {
+                if (line[idx] == '<') {
+                    is_in_Garbage = true;
+                }
+            } else {
+                if (line[idx] == '!') {
+                    idx++; // 跳过下一个字符
+                } else if (line[idx] == '>') {
+                    is_in_Garbage = false;
+                    total_garbage_chars += garbage_chars; // 累加当前垃圾中的字符数量
+                    garbage_chars = 0; // 重置当前垃圾中的字符数量
+                } else {
+                    garbage_chars++; // 计算垃圾中的字符数量
+                }
+            }
+            idx++;
         }
-      }
-      idx++;
     }
-    std::cout << "groups: " << groups << '\n';
-    std::cout << "score: " << score << '\n';
-    std::cout << "char_count: " << char_count << '\n';
-    std::cout << '\n';
-  }
-  return 0;
+
+    std::cout << "Total non-canceled characters in garbage: " << total_garbage_chars << '\n';
+    return 0;
 }
