@@ -1,0 +1,13 @@
+## Contributing Guidelines ##
+
+#### Overview ####
+
+This repository contains solutions to the Advent Of Code puzzles. Bug reports, improvements, refactoring suggestions and suggestions for different/better algorithms and approaches are welcome and highly encouraged. 
+
+However, one of the reasons this repository (and for solving the Advent of Code puzzles) has been created is to learn about different algorithms as well as their potential implementations. As such, suggestions for better algorithms/ideas will be reviewed and might be implemented; contributions to this repository will not be accepted. 
+
+Additionally, as this repository aims to improve the reader's/user's understanding of an algorithm as well, a balance between optimization and readability has to be maintained. 
+
+#### Opening an Issue #### 
+
+Please fill in the appropriate issue template to help communicate the bug/algorithm request. 
