@@ -1,6 +1,7 @@
 #include <array>
 #include <fstream>
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[]) {
   std::string input = "../input/day_02_input";
