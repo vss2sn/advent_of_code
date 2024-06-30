@@ -13,7 +13,7 @@ This repository contains solutions to the Advent of Code puzzles.
 |2019  |1-25 |1-7 | [Link](/2019/) |[Link](/2019/README.md) |
 |2018  |1-25 | - | [Link](/2018/) |[Link](/2018/README.md) |
 |2017  |1-25 | - | [Link](/2017/) |[Link](/2017/README.md) |
-|2017  |1-9 | - | [Link](/2016/) |[Link](/2016/README.md) |
+|2017  |1-10 | - | [Link](/2016/) |[Link](/2016/README.md) |
 
 ## To run ##
 
