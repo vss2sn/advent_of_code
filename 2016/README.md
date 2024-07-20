@@ -2,6 +2,11 @@
 
 This folder contains solutions to each of the problems in Advent of Code 2016 in C++.
 
+#### Notes ####
+* There are multiple sample puzzle inputs for some days. Modify the sample input file appropriately before using it
+* Some days (like 25) do not have a sample input
+* The MD5 hashing algorithm has been implemented with ease of understanding in mind, without any dependencies on third party libraries
+
 |Puzzle|C++ Solutions|Input|Sample Input|Puzzle page with solutions|
 |:---:|:---:|:---:|:---:|:---:|
 | <nobr> [Day 1: No Time for a Taxicab](https://adventofcode.com/2016/day/1) </nobr> | <nobr> [Part 1](/2016/cpp/day_01a.cpp) [Part 2](/2016/cpp/day_01b.cpp) </nobr> |[Link](/2016/input/day_01_input)|[Link](/2016/sample_input/day_01_sample_input)|[Link](/2016/puzzles/day_01_puzzle)|
