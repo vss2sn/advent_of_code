@@ -6,7 +6,8 @@ This repository contains solutions to the Advent of Code puzzles.
 
 | Year | C++ | Python | Link to folders | Link to README.md |
 |:----:|:----:|:----:|:----:|:----:|
-|2023  |1-25  | - | [Link](/2023/) |[Link](/2023/README.md) |
+|2024  |1| - | [Link](/2024/) |[Link](/2024/README.md) |
+|2023  |1-25 | - | [Link](/2023/) |[Link](/2023/README.md) |
 |2022  |1-25 | - | [Link](/2022/) |[Link](/2022/README.md) |
 |2021  |1-25 | - | [Link](/2021/) |[Link](/2021/README.md) |
 |2020  |1-25 |1-25 | [Link](/2020/) |[Link](/2020/README.md) |
@@ -30,4 +31,11 @@ To run any day's/puzzle's solution, use the following command:
 # Sample
 g++ 2016/cpp/day_01a.cpp -o a.out
 ./a.out 2016/input/day_01_input
+```
+
+Some of the files might need c++20/23 support, so those will need to be compiled as follows:
+
+```bash
+g++-13 2024/cpp/day_01a.cpp -std=gnu++2b -o a.out
+./a.out 2024/input/day_01_input
 ```
